@@ -6,11 +6,14 @@ def trsx_dictionary(dictionary):
     Parameters
     ----------
     dictionary : dict
-    dictionary associated to a List entity
+        
+    dictionary associated to a List entity :
+        
 
     Returns
     -------
-    XML file
+
+    
     """
     doc, tag, text = Doc().tagtext()
     with tag("dictionary", conceptref="ACCOUNT_TYPE"):
