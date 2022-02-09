@@ -2,19 +2,21 @@ from yattag import Doc, indent
 
 #List of sources used to label data
 
-def trsx_project_node(nuance_ver = '2.5'
-                      , nuance_lang = 'fra-CAN'
+def trsx_project_node(nuance_lang # "fra-CAN" or "eng-USA"
+                      , nuance_ver = '2.5'
+                      , nuance_xmlns = 'https://developer.nuance.com/mix/nlu/trsx'
+                      , nuance_pack = "hosted" # should I use a flexible argument?
                       #, metadata_node
                       #, sources_node
                       #, ontology_node
                       #, dictionaries_node
                       #, samples_node
                       ):
-    """
+    """ The project node is required for a TRSX file to be valid and for an import to proceed
 
     Parameters
     ----------
-    nuance_ver :
+    nuance_ver : str
          (Default value = '2.5')
     nuance_lang :
          (Default value = 'fra-CAN'#)
@@ -34,21 +36,26 @@ def trsx_project_node(nuance_ver = '2.5'
 
     """
     doc, tag, text = Doc().tagtext()
-    with tag("project", ('xml:lang', nuance_lang), ('nuance:version', nuance_ver)):
-        text("some content")
-    return(doc.getvalue())
+    with tag("project"
+            , ('xmlns:nuance', nuance_xmlns)
+            , ('xml:lang', nuance_lang)
+            , ('nuance:version', nuance_ver)
+            , ('nuance:enginePackVersion', nuance_pack)):
+        text("metadata_node, sources_node, ontology_node, dictionaries_node, samples_node")
+    return(indent(doc.getvalue(), indentation='    '))
 
-def trsx_metadata_node(str
-                    #, entry
-                       ):
-    """
+
+def trsx_project_node2(attributes, nuance_ver = '2.5'):
+    doc, tag, text = Doc().tagtext()
+    with tag("project", ('nuance:version', nuance_ver), *attributes.items()):
+        text("metadata_node, sources_node, ontology_node, dictionaries_node, samples_node")
+    return (indent(doc.getvalue(), indentation='    '))
+
+def trsx_metadata_node(**entries):
+    """manage extra details about your project such as author or version.
 
     Parameters
     ----------
-    str# :
-        
-    entry :
-        
 
     Returns
     -------
@@ -56,26 +63,30 @@ def trsx_metadata_node(str
     """
     doc, tag, text = Doc().tagtext()
     with tag("metadata"):
-        with tag("entry", key=str):
-            text(str)
+        for key, value in entries.items():
+            with tag("entry", key=key):
+                text(value)
     return(indent(doc.getvalue(), indentation = '    '))
 
-def trsx_sources_node(source_name ="name"
-                      , source_uri = "uri"
-                      , source_version = "string"
-                      , source_type = "type"):
+def trsx_source_node(source):
     """
 
     Parameters
     ----------
-    source_name :
-         (Default value = "name")
-    source_uri :
-         (Default value = "uri")
-    source_version :
-         (Default value = "string")
-    source_type :
-         (Default value = "type")
+
+    Returns
+    -------
+
+    """
+    doc, tag, text = Doc().tagtext()
+    doc.stag('source', *source.items())
+    return(doc.getvalue())
+
+def trsx_sources_node(sources):
+    """
+
+    Parameters
+    ----------
 
     Returns
     -------
@@ -83,6 +94,6 @@ def trsx_sources_node(source_name ="name"
     """
     doc, tag, text = Doc().tagtext()
     with tag("sources"):
-        doc.stag("source", name = source_name, uri = source_uri, version = source_version, type = source_type)
-    return(indent(doc.getvalue(), indentation = '    '))
-
+        for source in sources.values():
+            doc.asis(trsx_source_node(source = source))
+    return (indent(doc.getvalue(), indentation='    '))
