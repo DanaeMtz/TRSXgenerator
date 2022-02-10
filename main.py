@@ -4,46 +4,46 @@ from buildtrsx.build_ontology.build_ontology import trsx_links_node, trsx_intent
 
 #---# ACCOUNT TYPES #---#
 
-registered_plans_FR = {"CELI": ["CELI", "Compte d’épargne libre d’impôt", "Compte libre d’impôt"],
-                       "REER": ["REER", "Régime enregistré d’épargne retraite", "Compte d'épargne-retraite"],
-                       "REEE": ["REEE", "Régime enregistré d’épargne-études", "Régime d'épargne de mes enfants", "Compte d’épargne pour les études", "Compte R trois E"],
-                       "CPG": ["CPG" , "Certificat de placement garanti", "Certificat", "Placement garanti"] # not a plan, but can be placed in a CELI or in a REER
-                       }
-
-Annuities_retirement_funds_FR = {"FERR": ["FERR", "Fonds enregistré de revenu de retraite", "Compte de revenu de retraite"],
-                                 "CRI": ["CRI", "Compte de retraite immobilisé"],
-                                 "FRV": ["FRV", "Fonds de revenu viager"]
-                                 }
-
-regular_accounts_FR = {"Compte chèques": ["Compte chèques", "Compte bancaire", "Compte courant"],
-                       "Compte épargne à intérêt élevé": ["Compte épargne à intérêt élevé", "Compte épargne","Compte d'épargne"]
-                       }
-
-ACCOUNT_TYPE = {**registered_plans_FR, **regular_accounts_FR, **Annuities_retirement_funds_FR}
-
-#Intent-entity links
-ontology_investment = {'REQUEST_BALANCE': ['ACCOUNT_TYPE']
-                       , 'REQUEST_FOLLOWUP': ['ACCOUNT_TYPE']
-                       , 'OPEN_ACCOUNT': ['ACCOUNT_TYPE']
-                       , 'MAKE_INVESTMENT': ['FROM_ACCOUNT', 'TO_ACCOUNT', 'AMOUNT']
-                       , 'MAKE_WITHDRAWAL': ['FROM_ACCOUNT', 'TO_ACCOUNT', 'AMOUNT']
-                       , 'MAKE_AMENDMENT': ['ACCOUNT_TYPE']
-                       , 'OUT_OF_DOMAIN' : []
-                       }
-#Entity types (possible options: List, Relationship, dynamic, etc)
-entity_types = {'ACCOUNT_TYPE':{'entity_type':'List'}
-                , 'FROM_ACCOUNT': {'entity_type':'Relationship'}
-                , 'TO_ACCOUNT': {'entity_type':'Relationship'}
-                , 'AMOUNT': {'entity_type':'Relationship'}
-                , 'BANK_ACCOUNT': {'entity_type':'Relationship'}
-                }
-# Entity relationships (relationships that entities can have between entities. {isA, hasA, hasReferrers})
-entity_relations_types = {'ACCOUNT_TYPE': {'entity_type':'List'}
-                        , 'FROM_ACCOUNT': {'entity_type':'Relationship', 'type':"isA", 'conceptref':"ACCOUNT_TYPE"}
-                        , 'TO_ACCOUNT': {'entity_type':'Relationship', 'type':"isA", 'conceptref':"ACCOUNT_TYPE"}
-                        , 'AMOUNT': {'entity_type':'Relationship', 'type':"isA", 'conceptref':"nuance_AMOUNT"}
-                        , 'BANK_ACCOUNT': {'entity_type':'Relationship', 'type':"hasA", 'conceptref': ['ACCOUNT_BALANCE', 'ACCOUNT_NUMBER', 'ACCOUNT_TYPE']}
-                        }
+#registered_plans_FR = {"CELI": ["CELI", "Compte d’épargne libre d’impôt", "Compte libre d’impôt"],
+#                       "REER": ["REER", "Régime enregistré d’épargne retraite", "Compte d'épargne-retraite"],
+#                       "REEE": ["REEE", "Régime enregistré d’épargne-études", "Régime d'épargne de mes enfants", "Compte d’épargne pour les études", "Compte R trois E"],
+#                       "CPG": ["CPG" , "Certificat de placement garanti", "Certificat", "Placement garanti"] # not a plan, but can be placed in a CELI or in a REER
+#                       }
+#
+#Annuities_retirement_funds_FR = {"FERR": ["FERR", "Fonds enregistré de revenu de retraite", "Compte de revenu de retraite"],
+#                                 "CRI": ["CRI", "Compte de retraite immobilisé"],
+#                                 "FRV": ["FRV", "Fonds de revenu viager"]
+#                                 }
+#
+#regular_accounts_FR = {"Compte chèques": ["Compte chèques", "Compte bancaire", "Compte courant"],
+#                       "Compte épargne à intérêt élevé": ["Compte épargne à intérêt élevé", "Compte épargne","Compte d'épargne"]
+#                       }
+#
+#ACCOUNT_TYPE = {**registered_plans_FR, **regular_accounts_FR, **Annuities_retirement_funds_FR}
+#
+##Intent-entity links
+#ontology_investment = {'REQUEST_BALANCE': ['ACCOUNT_TYPE']
+#                       , 'REQUEST_FOLLOWUP': ['ACCOUNT_TYPE']
+#                       , 'OPEN_ACCOUNT': ['ACCOUNT_TYPE']
+#                       , 'MAKE_INVESTMENT': ['FROM_ACCOUNT', 'TO_ACCOUNT', 'AMOUNT']
+#                       , 'MAKE_WITHDRAWAL': ['FROM_ACCOUNT', 'TO_ACCOUNT', 'AMOUNT']
+#                       , 'MAKE_AMENDMENT': ['ACCOUNT_TYPE']
+#                       , 'OUT_OF_DOMAIN' : []
+#                       }
+##Entity types (possible options: List, Relationship, dynamic, etc)
+#entity_types = {'ACCOUNT_TYPE':{'entity_type':'List'}
+#                , 'FROM_ACCOUNT': {'entity_type':'Relationship'}
+#                , 'TO_ACCOUNT': {'entity_type':'Relationship'}
+#                , 'AMOUNT': {'entity_type':'Relationship'}
+#                , 'BANK_ACCOUNT': {'entity_type':'Relationship'}
+#                }
+## Entity relationships (relationships that entities can have between entities. {isA, hasA, hasReferrers})
+#entity_relations_types = {'ACCOUNT_TYPE': {'entity_type':'List'}
+#                        , 'FROM_ACCOUNT': {'entity_type':'Relationship', 'type':"isA", 'conceptref':"ACCOUNT_TYPE"}
+#                        , 'TO_ACCOUNT': {'entity_type':'Relationship', 'type':"isA", 'conceptref':"ACCOUNT_TYPE"}
+#                        , 'AMOUNT': {'entity_type':'Relationship', 'type':"isA", 'conceptref':"nuance_AMOUNT"}
+#                        , 'BANK_ACCOUNT': {'entity_type':'Relationship', 'type':"hasA", 'conceptref': ['ACCOUNT_BALANCE', 'ACCOUNT_NUMBER', 'ACCOUNT_TYPE']}
+#                        }
 
 
 #print(entity_types['ACCOUNT_TYPE']['entity_type'])
