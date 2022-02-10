@@ -37,13 +37,13 @@ from buildtrsx.build_ontology.build_ontology import trsx_links_node, trsx_intent
 #                , 'AMOUNT': {'entity_type':'Relationship'}
 #                , 'BANK_ACCOUNT': {'entity_type':'Relationship'}
 #                }
-## Entity relationships (relationships that entities can have between entities. {isA, hasA, hasReferrers})
-#entity_relations_types = {'ACCOUNT_TYPE': {'entity_type':'List'}
-#                        , 'FROM_ACCOUNT': {'entity_type':'Relationship', 'type':"isA", 'conceptref':"ACCOUNT_TYPE"}
-#                        , 'TO_ACCOUNT': {'entity_type':'Relationship', 'type':"isA", 'conceptref':"ACCOUNT_TYPE"}
-#                        , 'AMOUNT': {'entity_type':'Relationship', 'type':"isA", 'conceptref':"nuance_AMOUNT"}
-#                        , 'BANK_ACCOUNT': {'entity_type':'Relationship', 'type':"hasA", 'conceptref': ['ACCOUNT_BALANCE', 'ACCOUNT_NUMBER', 'ACCOUNT_TYPE']}
-#                        }
+# Entity relationships (relationships that entities can have between entities. {isA, hasA, hasReferrers})
+entity_relations_types = {'ACCOUNT_TYPE': {'entity_type':'List'}
+                        , 'FROM_ACCOUNT': {'entity_type':'Relationship', 'type':"isA", 'conceptref':"ACCOUNT_TYPE"}
+                        , 'TO_ACCOUNT': {'entity_type':'Relationship', 'type':"isA", 'conceptref':"ACCOUNT_TYPE"}
+                        , 'AMOUNT': {'entity_type':'Relationship', 'type':"isA", 'conceptref':"nuance_AMOUNT"}
+                        , 'BANK_ACCOUNT': {'entity_type':'Relationship', 'type':"hasA", 'conceptref': ['ACCOUNT_BALANCE', 'ACCOUNT_NUMBER', 'ACCOUNT_TYPE']}
+                        }
 
 
 #print(entity_types['ACCOUNT_TYPE']['entity_type'])
