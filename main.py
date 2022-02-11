@@ -21,12 +21,6 @@ sources_node = trsx_sources_node(sources = sources)
 project_attributes = {'xmlns:nuance':'https://developer.nuance.com/mix/nlu/trsx',
                       'xml:lang':'eng-USA', # 'fra-CAN'
                       'nuance:enginePackVersion':'hosted'}
-
-project_node = trsx_project_node(attributes = project_attributes,
-                                 metadata_node = metadata_node,
-                                 sources_node = sources_node)
-print(project_node)
-
 # build ontology script
 intent_entities = {"MAKE_INVESTMENT": [{'conceptref':'FROM_ACCOUNT', 'sourceref': 'some_source'},
                                        {'conceptref':'TO_ACCOUNT', 'sourceref': 'some_source'},
@@ -52,5 +46,10 @@ setting = {"ACCOUNT_TYPE":{'name':'isSensitive', 'value':"true"},
 
 print(trsx_settings_node(setting = setting["BANK_ACCOUNT"]))
 concepts_node = trsx_concepts_node(entities = entities)
+ontology_node = trsx_ontology_node(intents_node = intents_node, concepts_node = concepts_node)
 
-print(trsx_ontology_node(intents_node = intents_node, concepts_node = concepts_node))
+project_node = trsx_project_node(attributes = project_attributes,
+                                 metadata_node = metadata_node,
+                                 sources_node = sources_node,
+                                 ontology_node = ontology_node)
+print(project_node)

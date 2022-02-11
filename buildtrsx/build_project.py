@@ -32,6 +32,7 @@ def trsx_project_node(
     nuance_ver: str = "2.5",
     metadata_node: str = None,
     sources_node: str = None,
+    ontology_node: str = None
 ) -> str:
     """encapsulate all nodes"""
     doc, tag, text = Doc().tagtext()
@@ -39,9 +40,12 @@ def trsx_project_node(
     with tag("project", ("nuance:version", nuance_ver), *attributes.items()):
         if metadata_node is None:
             doc.asis(sources_node)
+            doc.asis(ontology_node)
         if sources_node is None:
             doc.asis(metadata_node)
+            doc.asis(ontology_node)
         else:
             doc.asis(sources_node)
             doc.asis(metadata_node)
+            doc.asis(ontology_node)
     return indent(doc.getvalue(), indentation="\t")
