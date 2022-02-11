@@ -34,7 +34,7 @@ def trsx_sources_node(sources: dict) -> str:
 
 def trsx_project_node(
     nuance_ver: str = "2.5", # Required attribute
-    attributes = None: dict,
+    attributes: dict = None,
     metadata_node: str = None,
     sources_node: str = None,
     ontology_node: str = None
@@ -43,16 +43,26 @@ def trsx_project_node(
     doc, tag, text = Doc().tagtext()
     if attributes is None:
         with tag("project", ("nuance:version", nuance_ver)):
+            if metadata_node is None:
+                doc.asis(sources_node)
+                doc.asis(ontology_node)
+            if sources_node is None:
+                doc.asis(metadata_node)
+                doc.asis(ontology_node)
+            else:
+                doc.asis(sources_node)
+                doc.asis(metadata_node)
+                doc.asis(ontology_node)
     else:
         with tag("project", ("nuance:version", nuance_ver), *attributes.items()):
-        if metadata_node is None:
-            doc.asis(sources_node)
-            doc.asis(ontology_node)
-        if sources_node is None:
-            doc.asis(metadata_node)
-            doc.asis(ontology_node)
-        else:
-            doc.asis(sources_node)
-            doc.asis(metadata_node)
-            doc.asis(ontology_node)
+            if metadata_node is None:
+                doc.asis(sources_node)
+                doc.asis(ontology_node)
+            if sources_node is None:
+                doc.asis(metadata_node)
+                doc.asis(ontology_node)
+            else:
+                doc.asis(sources_node)
+                doc.asis(metadata_node)
+                doc.asis(ontology_node)
     return indent(doc.getvalue(), indentation="\t")
