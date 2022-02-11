@@ -39,6 +39,14 @@ The build_project.py module contains the functions to manage the following nodes
                 An intent is linked to a set of entities. The links node describes the entities that can be used in 
                 sample annotations for this intent.
         - **concepts** (one)
+        The concepts node is composed by the ontology entities and contains: 
+            - **concept** (zero-many)
+            Each concept node defines a single entity and contains: 
+                - **relations** (zero-one)
+                The relations node specifies the relation between entities. Relations can be of type isA, hasA, 
+                or hasReferrers. The relations node contains:
+                    - **relation** (zero-many) 
+                
     - dictionary node (zero-one)
     - sample node (zero-many).
   
@@ -61,17 +69,42 @@ sources = {'IOT_Domain':source1,
 
 sources_node = trsx_sources_node(sources = sources)
 ```  
+
 ```  
-intent_entities = {"MAKE_INVESTMENT": [{'conceptref':'FROM_ACCOUNT', 'sourceref': 'some_source'},
-                                       {'conceptref':'TO_ACCOUNT', 'sourceref': 'some_source'},
-                                       {'conceptref': 'ACCOUNT_TYPE', 'sourceref': 'some_source'},
-                                       {'conceptref': 'AMOUNT', 'sourceref': 'some_source'}],
-                   "OPEN_ACCOUNT" : [{'conceptref':"ACCOUNT_TYPE"}],
+entity1_make_inv = {'conceptref':'FROM_ACCOUNT', 'sourceref': 'some_source'}
+entity2_make_inv = {'conceptref':'TO_ACCOUNT', 'sourceref': 'some_source'}
+entity3_make_inv = {'conceptref': 'ACCOUNT_TYPE', 'sourceref': 'some_source'}
+entity4_make_inv = {'conceptref': 'AMOUNT', 'sourceref': 'some_source'}
+entity1_open_acc = {'conceptref':"ACCOUNT_TYPE"}
+
+intent_entities = {"MAKE_INVESTMENT": [entity1_make_inv, 
+                                       entity2_make_inv, 
+                                       entity3_make_inv, 
+                                       entity4_make_inv],
+                   "OPEN_ACCOUNT" : [entity1_open_acc],
                    "OUT_OF_DOMAIN" : [],
                    "GOODBYE" : []}
 
 intents_node = trsx_intents_node(intents = intent_entities)
+``` 
+
+``` 
+entities = {"TO_ACCOUNT":{'type':"isA", 'conceptref':"ACCOUNT_TYPE"},
+            "FROM_ACCOUNT":{'type':"isA", 'conceptref':"ACCOUNT_TYPE", "sourceref": "some source"},
+            "AMOUNT":{'type':"isA", 'conceptref':"nuance_AMOUNT"},
+            "BANK_ACCOUNT":{'type':"hasA", 'conceptref':["ACCOUNT_BALANCE", "ACCOUNT_NUMBER", "ACCOUNT_TYPE"]}}
+            
+concepts_node = trsx_concepts_node(entities = entities)            
 ```  
+
+``` 
+intents_node = trsx_intents_node(intents = intent_entities)
+concepts_node = trsx_concepts_node(entities = entities)
+
+ontology_node = trsx_ontology_node(intents_node = intents_node,
+                                   concepts_node = concepts_node)
+```  
+
 # How to Use?
 As I have mentioned before, you never know who is going to read your readme. 
 So it is better to provide information on how to use your project. A step-by-step guide 

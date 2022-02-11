@@ -34,7 +34,7 @@ def trsx_relations_node(entity_rel: dict) -> str:
             doc.stag("relation", *entity_rel.items())
         else:
             for entity in entity_rel["conceptref"]:
-                doc.stag("relation", type=entity_rel["type"], conceptref=entity)
+                doc.stag("relation", type = entity_rel["type"], conceptref = entity)
     return indent(doc.getvalue(), indentation="\t")
 
 
@@ -57,7 +57,7 @@ def trsx_concepts_node(entities: dict) -> str:
 
 
 def trsx_ontology_node(
-    base_attribute="http://localhost:8080/resources/ontology-1.0.xml",
+    base_attribute = "http://localhost:8080/resources/ontology-1.0.xml",
     intents_node: str = None,
     concepts_node: str = None,
 ) -> str:
