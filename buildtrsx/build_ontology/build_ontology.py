@@ -14,12 +14,12 @@ def trsx_intents_node(intents: dict) -> str:
     with tag("intents"):
         for key, value in intents.items():
             if value:
-                with tag("intent", name=key):
+                with tag("intent", name = key):
                     with tag("links"):
                         for subdict in value:
-                            doc.asis(trsx_link_node(entity=subdict))
+                            doc.asis(trsx_link_node(entity = subdict))
             else:
-                doc.stag("intent", name=key)
+                doc.stag("intent", name = key)
 
     return indent(doc.getvalue(), indentation="\t")
 

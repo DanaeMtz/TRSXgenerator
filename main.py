@@ -24,16 +24,17 @@ print(sources_node)
 #                      'xml:lang':'eng-USA', # 'fra-CAN'
 #                      'nuance:enginePackVersion':'hosted'}
 ## build ontology script
-#intent_entities = {"MAKE_INVESTMENT": [{'conceptref':'FROM_ACCOUNT', 'sourceref': 'some_source'},
-#                                       {'conceptref':'TO_ACCOUNT', 'sourceref': 'some_source'},
-#                                       {'conceptref': 'ACCOUNT_TYPE', 'sourceref': 'some_source'},
-#                                       {'conceptref': 'AMOUNT', 'sourceref': 'some_source'}],
-#                   "OPEN_ACCOUNT" : [{'conceptref':"ACCOUNT_TYPE"}],
-#                   "OUT_OF_DOMAIN" : [],
-#                   "GOODBYE" : []}
-#
-#print(trsx_link_node(entity = intent_entities["MAKE_INVESTMENT"][0]))
-#intents_node = trsx_intents_node(intents = intent_entities)
+intent_entities = {"MAKE_INVESTMENT": [{'conceptref':'FROM_ACCOUNT', 'sourceref': 'some_source'},
+                                       {'conceptref':'TO_ACCOUNT', 'sourceref': 'some_source'},
+                                       {'conceptref': 'ACCOUNT_TYPE', 'sourceref': 'some_source'},
+                                       {'conceptref': 'AMOUNT', 'sourceref': 'some_source'}],
+                   "OPEN_ACCOUNT" : [{'conceptref':"ACCOUNT_TYPE"}],
+                   "OUT_OF_DOMAIN" : [],
+                   "GOODBYE" : []}
+
+print(trsx_link_node(entity = intent_entities["MAKE_INVESTMENT"][0]))
+intents_node = trsx_intents_node(intents = intent_entities)
+print(intents_node)
 #
 #entities = {"TO_ACCOUNT":{'type':"isA", 'conceptref':"ACCOUNT_TYPE"},
 #            "FROM_ACCOUNT":{'type':"isA", 'conceptref':"ACCOUNT_TYPE", "sourceref": "some source"},

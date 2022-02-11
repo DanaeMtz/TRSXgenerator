@@ -30,6 +30,15 @@ The build_project.py module contains the functions to manage the following nodes
     The sources node contains:
         - **Source nodes** (zero-many)
     - **Ontology node** (zero-one):
+    The intents and entities defined in the ontology are used to annotate the training data, and thus 
+    form the interface between the NLU and the client application. The ontology node contains:
+        - **Intents** (zero-one)
+        The intents node contains:
+            - **intent nodes** (zero-many)
+                - **links node** (zero-one)
+                An intent is linked to a set of entities. The links node describes the entities that can be used in 
+                sample annotations for this intent.
+        - **concepts** (one)
     - dictionary node (zero-one)
     - sample node (zero-many).
   
