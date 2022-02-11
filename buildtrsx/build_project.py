@@ -2,7 +2,7 @@ from yattag import Doc, indent
 
 
 def trsx_metadata_node(**entries: str) -> str:
-    """manage extra details about your project such as author or version."""
+    """manage extra details about the project such as author or version."""
     doc, tag, text = Doc().tagtext()
     with tag("metadata"):
         for key, value in entries.items():
@@ -28,16 +28,18 @@ def trsx_sources_node(sources: dict) -> str:
 
 
 def trsx_project_node(
-    attributes: dict,
-    nuance_ver: str = "2.5",
+    nuance_ver: str = "2.5", # Required attribute
+    attributes = None: dict,
     metadata_node: str = None,
     sources_node: str = None,
     ontology_node: str = None
 ) -> str:
     """encapsulate all nodes"""
     doc, tag, text = Doc().tagtext()
-
-    with tag("project", ("nuance:version", nuance_ver), *attributes.items()):
+    if attributes is None:
+        with tag("project", ("nuance:version", nuance_ver)):
+    else:
+        with tag("project", ("nuance:version", nuance_ver), *attributes.items()):
         if metadata_node is None:
             doc.asis(sources_node)
             doc.asis(ontology_node)
