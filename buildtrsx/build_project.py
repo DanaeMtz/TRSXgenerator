@@ -1,5 +1,6 @@
 from yattag import Doc, indent
 
+
 def trsx_metadata_node(**entries: str) -> str:
     """manage extra details about your project such as author or version."""
     doc, tag, text = Doc().tagtext()
@@ -9,11 +10,13 @@ def trsx_metadata_node(**entries: str) -> str:
                 text(value)
     return indent(doc.getvalue(), indentation="\t")
 
+
 def trsx_source_node(source: dict) -> str:
     """list sources used to label imported data."""
     doc, tag, text = Doc().tagtext()
     doc.stag("source", *source.items())
     return doc.getvalue()
+
 
 def trsx_sources_node(sources: dict) -> str:
     """gather all sources of data"""
@@ -23,11 +26,12 @@ def trsx_sources_node(sources: dict) -> str:
             doc.asis(trsx_source_node(source=source))
     return indent(doc.getvalue(), indentation="\t")
 
+
 def trsx_project_node(
-        attributes: dict,
-        nuance_ver: str = "2.5",
-        metadata_node: str = None,
-        sources_node: str = None,
+    attributes: dict,
+    nuance_ver: str = "2.5",
+    metadata_node: str = None,
+    sources_node: str = None,
 ) -> str:
     """encapsulate all nodes"""
     doc, tag, text = Doc().tagtext()
