@@ -61,7 +61,17 @@ sources = {'IOT_Domain':source1,
 
 sources_node = trsx_sources_node(sources = sources)
 ```  
+```  
+intent_entities = {"MAKE_INVESTMENT": [{'conceptref':'FROM_ACCOUNT', 'sourceref': 'some_source'},
+                                       {'conceptref':'TO_ACCOUNT', 'sourceref': 'some_source'},
+                                       {'conceptref': 'ACCOUNT_TYPE', 'sourceref': 'some_source'},
+                                       {'conceptref': 'AMOUNT', 'sourceref': 'some_source'}],
+                   "OPEN_ACCOUNT" : [{'conceptref':"ACCOUNT_TYPE"}],
+                   "OUT_OF_DOMAIN" : [],
+                   "GOODBYE" : []}
 
+intents_node = trsx_intents_node(intents = intent_entities)
+```  
 # How to Use?
 As I have mentioned before, you never know who is going to read your readme. 
 So it is better to provide information on how to use your project. A step-by-step guide 
