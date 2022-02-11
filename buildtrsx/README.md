@@ -25,7 +25,10 @@ The build_project.py module contains the functions to manage the following nodes
         - **Entry node**(zero-many):
         The entry node contains the key-value pair that specifies the metadata.
         The entry node has the attribute key, which is a string. The entry's value can be any string.
-    - sources node (zero-one), 
+    - **Sources node** (zero-one): 
+    The Sources node provides a list of sources used to label imported data to identify its origin.
+    The sources node contains:
+        - **Source nodes** (zero-many)
     - ontology node (zero-one), 
     - dictionary node (zero-one)
     - sample node (zero-many).

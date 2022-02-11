@@ -8,13 +8,13 @@ metadata_node = trsx_metadata_node(author = "Danae Martinez",
                                    description = "my NLU model",
                                    date = "january 2022")
 # sources #
-source1 = {'name':"IOT_Domain", 'type':"CUSTOM"}
-source2 = {"name":"DTV_Domain", 'uri':"http://localhost:80/my_local_dtv_domain",  'version':"1.0",  'type':"PREBUILT"}
-source3 = {'name':"NCSRef_Rejection", 'uri':"http://localhost:80/ncs_ref_rejection_model", 'version':"1.0", 'type':"REJECTION"}
+source1 = {'type':"CUSTOM"}
+source2 = {'uri':"http://localhost:80/my_local_dtv_domain",  'version':"1.0",  'type':"PREBUILT"}
+source3 = {'uri':"http://localhost:80/ncs_ref_rejection_model", 'version':"1.0", 'type':"REJECTION"}
 
-sources = {'source_1':source1,
-           'source_2':source2,
-           'source_3':source3}
+sources = {'IOT_Domain':source1,
+           'DTV_Domain':source2,
+           'NCSRef_Rejection':source3}
 
 sources_node = trsx_sources_node(sources = sources)
 

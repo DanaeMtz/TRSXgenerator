@@ -11,10 +11,15 @@ def trsx_metadata_node(**entries: str) -> str:
     return indent(doc.getvalue(), indentation="\t")
 
 
-def trsx_source_node(source: dict) -> str:
+def trsx_source_node(name: str, # Required attribute
+                     source: dict = None # Optional attributes
+                     ) -> str:
     """list sources used to label imported data."""
     doc, tag, text = Doc().tagtext()
-    doc.stag("source", *source.items())
+    if source is None:
+        doc.stag("source", name = name)
+    else:
+        doc.stag("source", name = name, *source.items())
     return doc.getvalue()
 
 
@@ -22,8 +27,8 @@ def trsx_sources_node(sources: dict) -> str:
     """gather all sources of data"""
     doc, tag, text = Doc().tagtext()
     with tag("sources"):
-        for source in sources.values():
-            doc.asis(trsx_source_node(source=source))
+        for name, source in sources.items():
+            doc.asis(trsx_source_node(name = name, source = source))
     return indent(doc.getvalue(), indentation="\t")
 
 
