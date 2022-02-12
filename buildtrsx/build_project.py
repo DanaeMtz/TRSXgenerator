@@ -2,19 +2,20 @@ from yattag import Doc, indent
 
 
 def trsx_metadata_node(**entries: str) -> str:
-    """manage extra details about the project such as author or version."""
+    """Manage extra details about the project, such as author or
+    version and encapsulate the info within the metadata node."""
     doc, tag, text = Doc().tagtext()
     with tag("metadata"):
         for key, value in entries.items():
-            with tag("entry", key=key):
+            with tag("entry", key = key):
                 text(value)
     return indent(doc.getvalue(), indentation="\t")
 
 
-def trsx_source_node(name: str, # Required attribute
-                     source: dict = None # Optional attributes
+def trsx_source_node(name: str, # Required attribute of the source node
+                     source: dict = None # Optional attributes of the source node
                      ) -> str:
-    """list sources used to label imported data."""
+    """List sources used to label imported data."""
     doc, tag, text = Doc().tagtext()
     if source is None:
         doc.stag("source", name = name)
@@ -24,7 +25,7 @@ def trsx_source_node(name: str, # Required attribute
 
 
 def trsx_sources_node(sources: dict) -> str:
-    """gather all sources of data"""
+    """Gather all sources of data and wrap them within the sources node."""
     doc, tag, text = Doc().tagtext()
     with tag("sources"):
         for name, source in sources.items():
@@ -37,9 +38,11 @@ def trsx_project_node(
     attributes: dict = None,
     metadata_node: str = None,
     sources_node: str = None,
-    ontology_node: str = None
+    ontology_node: str = None,
+    dictionaries_node: str = None,
+    samples_node: str = None
 ) -> str:
-    """encapsulate all nodes"""
+    """Encapsulate all nodes and incorporate attributes for the project's node."""
     doc, tag, text = Doc().tagtext()
     if attributes is None:  # nuance:version is the only required attribute
         with tag("project", ("nuance:version", nuance_ver)):
