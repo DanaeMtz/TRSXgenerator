@@ -2,9 +2,7 @@ from buildtrsx.build_samples.build_samples import
 
 
 
-project_attributes = {'xmlns:nuance':'https://developer.nuance.com/mix/nlu/trsx',
-                      'xml:lang':'eng-USA', # 'fra-CAN'
-                      'nuance:enginePackVersion':'hosted'}
+
 # build ontology script
 
 entity1_make_inv = {'conceptref':'FROM_ACCOUNT', 'sourceref': 'some_source'}
