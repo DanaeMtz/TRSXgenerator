@@ -53,7 +53,7 @@ The build_project.py module contains the functions to manage the following nodes
           - **dictionary** (zero-many) Contains a required attribute conceptref, which defines the entity the entries 
           apply to. Each dictionary node contains 
             - **entry** (zero-many)
-    - sample node (zero-many).
+    - **samples** (zero-many).
     
 
 ```
