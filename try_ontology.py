@@ -1,6 +1,14 @@
 from buildtrsx.build_ontology.build_ontology import trsx_link_node, trsx_intents_node, \
     trsx_relations_node, trsx_settings_node, trsx_concepts_node, trsx_ontology_node
 
+# build ontology script
+
+entity1_make_inv = {'conceptref':'FROM_ACCOUNT', 'sourceref': 'some_source'}
+entity2_make_inv = {'conceptref':'TO_ACCOUNT', 'sourceref': 'some_source'}
+entity3_make_inv = {'conceptref': 'ACCOUNT_TYPE', 'sourceref': 'some_source'}
+entity4_make_inv = {'conceptref': 'AMOUNT', 'sourceref': 'some_source'}
+entity1_open_acc = {'conceptref':"ACCOUNT_TYPE"}
+
 
 intent_entities = {"MAKE_INVESTMENT": [entity1_make_inv,
                                        entity2_make_inv,
