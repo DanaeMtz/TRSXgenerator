@@ -47,9 +47,15 @@ The build_project.py module contains the functions to manage the following nodes
                 or hasReferrers. The relations node contains:
                     - **relation** (zero-many) 
                 
-    - dictionary node (zero-one)
+        - **dictionary** (zero-one) : 
+        A List entity can have an associated dictionary. The dictionary is the list of spoken forms that correspond to 
+        'mentions' that are part of the entity. The dictionaries node contains:
+          - **dictionary** (zero-many) Contains a required attribute conceptref, which defines the entity the entries 
+          apply to. Each dictionary node contains 
+            - **entry** (zero-many)
     - sample node (zero-many).
-  
+    
+
 ```
 metadata_node = trsx_metadata_node(author = "Danae Martinez",
                                    version = "1.0.0",
@@ -90,7 +96,8 @@ intents_node = trsx_intents_node(intents = intent_entities)
 
 ``` 
 entities = {"TO_ACCOUNT":{'type':"isA", 'conceptref':"ACCOUNT_TYPE"},
-            "FROM_ACCOUNT":{'type':"isA", 'conceptref':"ACCOUNT_TYPE", "sourceref": "some source"},
+            "FROM_ACCOUNT":{'t
+            ype':"isA", 'conceptref':"ACCOUNT_TYPE", "sourceref": "some source"},
             "AMOUNT":{'type':"isA", 'conceptref':"nuance_AMOUNT"},
             "BANK_ACCOUNT":{'type':"hasA", 'conceptref':["ACCOUNT_BALANCE", "ACCOUNT_NUMBER", "ACCOUNT_TYPE"]}}
             
@@ -105,8 +112,17 @@ ontology_node = trsx_ontology_node(intents_node = intents_node,
                                    concepts_node = concepts_node)
 ```  
 
+```  
+account_type = {'CELI':['CELI','Compte d’épargne libre d’impôt', 'Compte libre d’impôt'],
+                'REER':['REER','Régime enregistré d’épargne retraite', 'Compte d’épargne-retraite']}
+
+entities_literals_dict = {"ACCOUNT_TYPE":account_type}
+trsx_dictionaries(entities = entities_literals_dict)
+```  
+
 # How to Use?
 As I have mentioned before, you never know who is going to read your readme. 
 So it is better to provide information on how to use your project. A step-by-step guide 
 is best suited for this purpose. It is better to explain steps as detailed as possible
  because it might be a beginner who is reading it.
+
