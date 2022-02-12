@@ -41,7 +41,7 @@ def trsx_project_node(
 ) -> str:
     """encapsulate all nodes"""
     doc, tag, text = Doc().tagtext()
-    if attributes is None:
+    if attributes is None:  # nuance:version is the only required attribute
         with tag("project", ("nuance:version", nuance_ver)):
             if metadata_node is None:
                 doc.asis(sources_node)
