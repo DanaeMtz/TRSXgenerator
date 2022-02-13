@@ -1,36 +1,23 @@
 from yattag import Doc, indent
 
 
-def wrap_metadata_node(func):
-    def wrapper(
-        nuance_ver: str = "2.5",  # Required attribute for the project's node
-        attributes: dict = None,
-        **entries
-    ):
-        """Encapsulate the metadata node and incorporate attributes for the project's node."""
+def project_wrapper(func):
+    """"encapsulates one node at a time"""
+    def wrapper(nuance_ver: str = "2.5", attributes: dict = None, *args, **kwargs):
+        """Encapsulate sources node and incorporate attributes for the project's node."""
         doc, tag, text = Doc().tagtext()
+        doc.asis('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>')
         if attributes is None:
             with tag("project", ("nuance:version", nuance_ver)):
-                doc.asis(func(**entries))
+                doc.asis(func(*args, **kwargs))
+                doc.stag("ontology", base="http://localhost:8080/resources/ontology-1.0.xml")
         else:
             with tag("project", ("nuance:version", nuance_ver), *attributes.items()):
-                doc.asis(func(**entries))
+                doc.asis(func(*args, **kwargs))
+                doc.stag("ontology", base="http://localhost:8080/resources/ontology-1.0.xml")
         return indent(doc.getvalue(), indentation="\t")
-
     wrapper._original = func
     return wrapper
-
-
-@wrap_metadata_node
-def trsx_metadata_node(**entries: str) -> str:
-    """Manage extra details about the project, such as author or
-    version and encapsulate the info within the metadata node."""
-    doc, tag, text = Doc().tagtext()
-    with tag("metadata"):
-        for key, value in entries.items():
-            with tag("entry", key=key):
-                text(value)
-    return indent(doc.getvalue(), indentation="\t")
 
 
 def trsx_source_node(
@@ -46,27 +33,7 @@ def trsx_source_node(
     return doc.getvalue()
 
 
-def wrap_sources_node(func):
-    def wrapper(
-        sources,
-        nuance_ver: str = "2.5",  # Required attribute for the project's node
-        attributes: dict = None,
-    ):
-        """Encapsulate sources node and incorporate attributes for the project's node."""
-        doc, tag, text = Doc().tagtext()
-        if attributes is None:
-            with tag("project", ("nuance:version", nuance_ver)):
-                doc.asis(func(sources))
-        else:
-            with tag("project", ("nuance:version", nuance_ver), *attributes.items()):
-                doc.asis(func(sources))
-        return indent(doc.getvalue(), indentation="\t")
-
-    wrapper._original = func
-    return wrapper
-
-
-@wrap_sources_node
+@project_wrapper
 def trsx_sources_node(sources: dict) -> str:
     """Gather all sources of data and wrap them up within the sources node."""
     doc, tag, text = Doc().tagtext()
@@ -76,21 +43,13 @@ def trsx_sources_node(sources: dict) -> str:
     return indent(doc.getvalue(), indentation="\t")
 
 
-def trsx_project_node(
-    nuance_ver: str = "2.5",  # Required attribute
-    attributes: dict = None,
-    metadata_node: str = None,
-    sources_node: str = None,
-    ontology_node: str = None,
-    dictionaries_node: str = None,
-    samples_node: str = None,
-) -> str:
-    """Encapsulate all nodes and incorporate attributes for the project's node."""
+@project_wrapper
+def trsx_metadata_node(**entries: str) -> str:
+    """Manage extra details about the project, such as author or
+    version and encapsulate the info within the metadata node."""
     doc, tag, text = Doc().tagtext()
-    if attributes is None:  # nuance:version is the only required attribute
-        with tag("project", ("nuance:version", nuance_ver)):
-            text("rest of optional nodes")
-    else:
-        with tag("project", ("nuance:version", nuance_ver), *attributes.items()):
-            text("rest of optional nodes")
+    with tag("metadata"):
+        for key, value in entries.items():
+            with tag("entry", key=key):
+                text(value)
     return indent(doc.getvalue(), indentation="\t")
