@@ -57,7 +57,7 @@ def trsx_metadata_node(**entries: str) -> str:
 
 @project_wrapper
 def trsx_gather_nodes(**kwargs: str) -> str:
-    """empty project using two nodes"""
+    """gather all sub nodes and put them inside the project node"""
     doc, tag, text = Doc().tagtext()
     for node in kwargs.values():
         doc.asis(node)

@@ -21,7 +21,6 @@ def trsx_link_node(entity: dict) -> str:
     return indent(doc.getvalue(), indentation="\t")
 
 
-@ontology_wrapper
 def trsx_intents_node(intents: dict) -> str:
     """Generate the intents node"""
     doc, tag, text = Doc().tagtext()
@@ -66,23 +65,15 @@ def trsx_concepts_node(entities: dict) -> str:
     with tag("concepts"):
         for key in entities:
             with tag("concept", name=key):
-                doc.asis(trsx_relations_node(entity_rel=entities[key]))
+                if entities[key]:
+                    doc.asis(trsx_relations_node(entity_rel=entities[key]))
     return indent(doc.getvalue(), indentation="\t")
 
 
-def trsx_ontology_node(
-    base_attribute = "http://localhost:8080/resources/ontology-1.0.xml",
-    intents_node: str = None,
-    concepts_node: str = None,
-) -> str:
-    """create an ontology using the required XML format"""
+@ontology_wrapper
+def trsx_gather_subnodes_ontology(**kwargs: str) -> str:
+    """gather all sub nodes and put them inside the project node"""
     doc, tag, text = Doc().tagtext()
-    with tag("ontology", base=base_attribute):
-        if intents_node is None:
-            doc.asis(concepts_node)
-        if concepts_node is None:
-            doc.asis(intents_node)
-        else:
-            doc.asis(concepts_node)
-            doc.asis(intents_node)
-    return indent(doc.getvalue(), indentation="\t")
+    for subnode in kwargs.values():
+        doc.asis(subnode)
+    return doc.getvalue()
