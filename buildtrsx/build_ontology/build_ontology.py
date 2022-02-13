@@ -1,6 +1,19 @@
 from yattag import Doc, indent
 
 
+def ontology_wrapper(func):
+    """ "encapsulates one node at a time"""
+
+    def wrapper(base_attribute = "http://localhost:8080/resources/ontology-1.0.xml", *args, **kwargs):
+        """Encapsulate intents node and incorporate attributes for the ontology's node."""
+        doc, tag, text = Doc().tagtext()
+        with tag("ontology", base=base_attribute):
+            doc.asis(func(*args, **kwargs))
+        return indent(doc.getvalue(), indentation="\t")
+    wrapper._original = func
+    return wrapper
+
+
 def trsx_link_node(entity: dict) -> str:
     """An intent is linked to a set of entities."""
     doc, tag, text = Doc().tagtext()
@@ -8,6 +21,7 @@ def trsx_link_node(entity: dict) -> str:
     return indent(doc.getvalue(), indentation="\t")
 
 
+@ontology_wrapper
 def trsx_intents_node(intents: dict) -> str:
     """Generate the intents node"""
     doc, tag, text = Doc().tagtext()

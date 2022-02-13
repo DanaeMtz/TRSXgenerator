@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<project xmlns:nuance="https://developer.nuance.com/mix/nlu/trsx" xml:lang="fra-CAN" nuance:version="2.5" nuance:enginePackVersion="hosted">
-	<metadata>
+<project xmlns:nuance="https://developer.nuance.com/mix/nlu/trsx" xml:lang="fra-CAN" nuance:version="2.5" nuance:enginePackVersion="hosted">	<metadata>
 		<entry key="author">Danae Martinez</entry>
 		<entry key="version">1.0.0</entry>
 		<entry key="description">my NLU model</entry>

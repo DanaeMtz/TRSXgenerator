@@ -29,13 +29,14 @@ The project node contains
 - zero or one metadata node
 - zero or one sources node 
 - zero or one ontology node 
+- zero or one dictionary node 
 
 ### Metadata node (zero-one)
 
 Lets you manage extra details about your project, such as author or version.
 The metadata node contains
 
-- Entry node(zero-many)
+- Entry node (zero-many)
 
 The entry node contains the key-value pair that specifies the metadata. The 
 entry node has the attribute key, which is a string. The entry's value can be 
@@ -49,30 +50,34 @@ identify its origin. The sources node contains
 - Source nodes (zero-many)
         
 ### Ontology node (zero-one)
-    The intents and entities defined in the ontology are used to annotate the training data, and thus 
-    form the interface between the NLU and the client application. The ontology node contains:
-        - **Intents** (zero-one)
-        The intents node contains:
-            - **intent nodes** (zero-many)
-                - **links node** (zero-one)
-                An intent is linked to a set of entities. The links node describes the entities that can be used in 
-                sample annotations for this intent.
-        - **concepts** (one)
-        The concepts node is composed by the ontology entities and contains:
-            - **concept** (zero-many)
-            Each concept node defines a single entity and contains:
-                - **relations** (zero-one)
-                The relations node specifies the relation between entities. Relations can be of type isA, hasA, 
-                or hasReferrers. The relations node contains:
-                    - **relation** (zero-many) 
+
+The intents and entities defined in the ontology are used to annotate the 
+training data, and thus form the interface between the NLU and the client 
+application. The ontology node contains
+
+- **Intents** (zero-one).
+    - **intent nodes** (zero-many).
+        - **links node** (zero-one).
+        An intent is linked to a set of entities. The links node describes the 
+        entities that can be used in sample annotations for this intent.
+- **concepts** (one).
+The concepts node is composed by the ontology entities and contains:
+    - **concept** (zero-many).
+    Each concept node defines a single entity and contains:
+        - **relations** (zero-one).
+        The relations node specifies the relation between entities. Relations 
+        can be of type isA, hasA, or hasReferrers. The relations node contains:
+            - **relation** (zero-many) 
                 
-        - **dictionary** (zero-one) : 
-        A List entity can have an associated dictionary. The dictionary is the list of spoken forms that correspond to 
-        'mentions' that are part of the entity. The dictionaries node contains:
-          - **dictionary** (zero-many) Contains a required attribute conceptref, which defines the entity the entries 
-          apply to. Each dictionary node contains 
-            - **entry** (zero-many)
-    - **samples** (zero-many).
+### dictionary (zero-one)
+
+A List entity can have an associated dictionary. The dictionary is the list of spoken forms that correspond to 
+'mentions' that are part of the entity. The dictionaries node contains:
+  - **dictionary** (zero-many) Contains a required attribute conceptref, which defines the entity the entries 
+  apply to. Each dictionary node contains 
+    - **entry** (zero-many)
+            
+### samples (zero-many)
     
 
 # Code Examples

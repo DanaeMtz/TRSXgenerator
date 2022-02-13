@@ -5,7 +5,7 @@ def project_wrapper(func):
     """ "encapsulates one node at a time"""
 
     def wrapper(nuance_ver: str = "2.5", attributes: dict = None, *args, **kwargs):
-        """Encapsulate sources node and incorporate attributes for the project's node."""
+        """Encapsulate sources or metadata node and incorporate attributes for the project's node."""
         doc, tag, text = Doc().tagtext()
         doc.asis('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>')
         if attributes is None:
@@ -21,7 +21,6 @@ def project_wrapper(func):
                     "ontology", base="http://localhost:8080/resources/ontology-1.0.xml"
                 )
         return indent(doc.getvalue(), indentation="\t")
-
     wrapper._original = func
     return wrapper
 
@@ -59,9 +58,10 @@ def trsx_metadata_node(**entries: str) -> str:
 
 
 @project_wrapper
-def trsx_sources_metadata(sources_node: str, metadata_node: str) -> str:
+def trsx_gather_nodes(**kwargs: str) -> str:
     """empty project using two nodes"""
     doc, tag, text = Doc().tagtext()
-    doc.asis(sources_node)
-    doc.asis(metadata_node)
+    for node in kwargs.values():
+        print(type(node))
+        doc.asis(node)
     return doc.getvalue()

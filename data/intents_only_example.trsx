@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project xmlns:nuance="https://developer.nuance.com/mix/nlu/trsx" xml:lang="fra-CAN" nuance:version="2.5" nuance:enginePackVersion="hosted">
+    <metadata>
+        <entry key="author">Danae Martinez</entry>
+        <entry key="date">january 2022</entry>
+        <entry key="description">my NLU model</entry>
+        <entry key="version">1.0.0</entry>
+    </metadata>
+    <sources>
+        <source name="nuance_custom_data" displayName="nuance_custom_data" version="1.0" type="CUSTOM" useForOOV="true"/>
+    </sources>
+    <ontology base="http://localhost:8080/resources/ontology-1.0.xml">
+        <intents>
+            <intent name="OPEN_ACCOUNT"/>
+            <intent name="MAKE_INVESTMENT"/>
+            <intent name="MAKE_WITHDRAWAL"/>
+            <intent name="REQUEST_FOLLOW_UP"/>
+            <intent name="MAKE_AMENDMENT"/>
+            <intent name="REQUEST_BALANCE"/>
+        </intents>
+    </ontology>
+</project>

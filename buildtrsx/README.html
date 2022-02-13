@@ -373,12 +373,13 @@ pre code {
 <li>zero or one metadata node</li>
 <li>zero or one sources node</li>
 <li>zero or one ontology node</li>
+<li>zero or one dictionary node</li>
 </ul>
 <div id="metadata-node-zero-one" class="section level3">
 <h3>Metadata node (zero-one)</h3>
 <p>Lets you manage extra details about your project, such as author or version. The metadata node contains</p>
 <ul>
-<li>Entry node(zero-many)</li>
+<li>Entry node (zero-many)</li>
 </ul>
 <p>The entry node contains the key-value pair that specifies the metadata. The entry node has the attribute key, which is a string. The entry’s value can be any string.</p>
 </div>
@@ -391,30 +392,33 @@ pre code {
 </div>
 <div id="ontology-node-zero-one" class="section level3">
 <h3>Ontology node (zero-one)</h3>
-<pre><code>The intents and entities defined in the ontology are used to annotate the training data, and thus 
-form the interface between the NLU and the client application. The ontology node contains:
-    - **Intents** (zero-one)
-    The intents node contains:
-        - **intent nodes** (zero-many)
-            - **links node** (zero-one)
-            An intent is linked to a set of entities. The links node describes the entities that can be used in 
-            sample annotations for this intent.
-    - **concepts** (one)
-    The concepts node is composed by the ontology entities and contains:
-        - **concept** (zero-many)
-        Each concept node defines a single entity and contains:
-            - **relations** (zero-one)
-            The relations node specifies the relation between entities. Relations can be of type isA, hasA, 
-            or hasReferrers. The relations node contains:
-                - **relation** (zero-many) 
-            
-    - **dictionary** (zero-one) : 
-    A List entity can have an associated dictionary. The dictionary is the list of spoken forms that correspond to 
-    &#39;mentions&#39; that are part of the entity. The dictionaries node contains:
-      - **dictionary** (zero-many) Contains a required attribute conceptref, which defines the entity the entries 
-      apply to. Each dictionary node contains 
-        - **entry** (zero-many)
-- **samples** (zero-many).</code></pre>
+<p>The intents and entities defined in the ontology are used to annotate the training data, and thus form the interface between the NLU and the client application. The ontology node contains</p>
+<ul>
+<li><strong>Intents</strong> (zero-one).
+<ul>
+<li><strong>intent nodes</strong> (zero-many).
+<ul>
+<li><strong>links node</strong> (zero-one). An intent is linked to a set of entities. The links node describes the entities that can be used in sample annotations for this intent.</li>
+</ul></li>
+</ul></li>
+<li><strong>concepts</strong> (one). The concepts node is composed by the ontology entities and contains:
+<ul>
+<li><strong>concept</strong> (zero-many). Each concept node defines a single entity and contains:
+<ul>
+<li><strong>relations</strong> (zero-one). The relations node specifies the relation between entities. Relations can be of type isA, hasA, or hasReferrers. The relations node contains:
+<ul>
+<li><strong>relation</strong> (zero-many)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="dictionary-zero-one" class="section level3">
+<h3>dictionary (zero-one)</h3>
+<p>A List entity can have an associated dictionary. The dictionary is the list of spoken forms that correspond to ‘mentions’ that are part of the entity. The dictionaries node contains: - <strong>dictionary</strong> (zero-many) Contains a required attribute conceptref, which defines the entity the entries apply to. Each dictionary node contains - <strong>entry</strong> (zero-many)</p>
+</div>
+<div id="samples-zero-many" class="section level3">
+<h3>samples (zero-many)</h3>
 </div>
 </div>
 </div>
