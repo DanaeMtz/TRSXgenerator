@@ -20,10 +20,7 @@ def project_wrapper(func):
     return wrapper
 
 
-def trsx_source_node(
-    name: str,  # Required attribute of the source node
-    source: dict = None,  # Optional attributes of the source node
-) -> str:
+def trsx_source_node(name: str, source: dict = None) -> str:
     """List sources used to label imported data."""
     doc, tag, text = Doc().tagtext()
     if source is None:
@@ -53,3 +50,12 @@ def trsx_metadata_node(**entries: str) -> str:
             with tag("entry", key=key):
                 text(value)
     return indent(doc.getvalue(), indentation="\t")
+
+
+@project_wrapper
+def trsx_sources_metadata(sources_node: str, metadata_node: str) -> str:
+    """empty project using two nodes"""
+    doc, tag, text = Doc().tagtext()
+    doc.asis(sources_node)
+    doc.asis(metadata_node)
+    return(doc.getvalue())
