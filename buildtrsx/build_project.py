@@ -35,7 +35,6 @@ def trsx_source_node(name: str, source: dict = None) -> str:
     return doc.getvalue()
 
 
-@project_wrapper
 def trsx_sources_node(sources: dict) -> str:
     """Gather all sources of data and wrap them up within the sources node."""
     doc, tag, text = Doc().tagtext()
@@ -45,7 +44,6 @@ def trsx_sources_node(sources: dict) -> str:
     return indent(doc.getvalue(), indentation="\t")
 
 
-@project_wrapper
 def trsx_metadata_node(**entries: str) -> str:
     """Manage extra details about the project, such as author or
     version and encapsulate the info within the metadata node."""
@@ -62,6 +60,5 @@ def trsx_gather_nodes(**kwargs: str) -> str:
     """empty project using two nodes"""
     doc, tag, text = Doc().tagtext()
     for node in kwargs.values():
-        print(type(node))
         doc.asis(node)
     return doc.getvalue()

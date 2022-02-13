@@ -39,22 +39,22 @@ project_attributes = {
 }
 
 # call the sources node
-sources_node = trsx_sources_node._original(sources=sources)
-print(sources_node)
+#sources_node = trsx_sources_node._original(sources=sources)
+#print(sources_node)
 
 # call the wrapped sources node
-wrapped_sources_node = trsx_sources_node(sources=sources, attributes=project_attributes)
+wrapped_sources_node = trsx_sources_node(sources=sources)
 print(wrapped_sources_node)
 #
-## example of an empty project
-#empty_project = trsx_sources_node(
-#    sources={"nuance_custom_data": source4}, attributes=project_attributes
-#)
-#print(empty_project)
+# example of an empty project
+empty_project = trsx_sources_node(
+    sources={"nuance_custom_data": source4}
+)
+print(empty_project)
 #
 ## metadata node
 ## call the metadata node
-metadata_node = trsx_metadata_node._original(
+metadata_node = trsx_metadata_node(
     author="Danae Martinez",
     version="1.0.0",
     description="my NLU model",
@@ -76,5 +76,4 @@ print(metadata_node)
 #print(wrapped_metadata_node)
 #
 ## both nodes
-print(trsx_gather_nodes(sources_node, metadata_node, attributes=project_attributes))
-#
+print(trsx_gather_nodes(metadata_node=metadata_node, attributes = project_attributes))
