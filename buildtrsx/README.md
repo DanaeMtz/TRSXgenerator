@@ -131,16 +131,6 @@ wrapped_sources_node = trsx_sources_node(sources=sources, attributes=project_att
 
 ```  
 
-```xml
-<metadata>
-		<entry key="author">Danae Martinez</entry>
-		<entry key="version">1.0.0</entry>
-		<entry key="description">my NLU model</entry>
-		<entry key="date">january 2022</entry>
-	</metadata>
-```
-
-
 ```python
 
 from buildtrsx.build_project import trsx_metadata_node
