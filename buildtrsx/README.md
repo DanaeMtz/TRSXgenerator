@@ -1,21 +1,35 @@
 
 # TRSX generator
 
-Input information about a NLU model and return the corresponding TRSX file ready 
-to be used by the Mix.nlu tool.
+Receives information about a NLU model and return the corresponding TRSX file 
+ready to be used by the Mix.nlu tool.
 
 # Motivation
 
 In order to avoid manual manipulations using the UI of Mix.nlu and east the 
 version control process of NLU models, it is preferable to work with .trsx 
 files, which are a special type of XML files that conforms to Nuance Mix 
-specifications.
+specifications. 
+
+Sometimes, it is more flexible work with separate files that manage the 
+ontology, the dictionaries and the samples separately. This set of functions 
+allow users to automatically generate those separated files or one big file 
+with all components. The final output is a .trsx file that can be interpreted 
+by the Mix.nlu tool. 
 
 # Features
 
 This package allows to manage nodes separately, so the user can generate 
-accepted files keeping separately the ontology, dictionaries and samples parts 
-of the NLU project. 
+accepted files keeping the ontology, dictionaries and samples in separated parts 
+of the NLU project that are then merged by Mix once uploaded. 
+
+This package is composed by three sub-packages
+- build dictionaries 
+- build ontology 
+- build samples 
+
+The module build_project contains the functions to generate the metadata and 
+sources node as well as the wrapper project function. 
 
 # TRSX file structure 
 
@@ -30,25 +44,54 @@ The project node contains
 - zero or one sources node 
 - zero or one ontology node 
 - zero or one dictionary node 
+- zero or many samples node 
+
+```xml
+<project nuance:version="2.5">
+    <metadata/>
+    <sources/>
+    <ontology/>
+    <dictionaries/>
+    <samples/>
+</project>
+```
 
 ### Metadata node (zero-one)
 
-Lets you manage extra details about your project, such as author or version.
-The metadata node contains
+The metadata node lets you manage extra details about your project, such as 
+author or version.The metadata node contains zero or manu entry nodes. 
 
 - Entry node (zero-many)
 
 The entry node contains the key-value pair that specifies the metadata. The 
 entry node has the attribute key, which is a string. The entry's value can be 
 any string.
-        
+
+```xml
+	<metadata>
+		<entry key="author">Danae Martinez</entry>
+		<entry key="version">1.0.0</entry>
+		<entry key="description">my NLU model</entry>
+		<entry key="date">february 2022</entry>
+	</metadata>
+```
+
 ### Sources node (zero-one)
 
 The Sources node provides a list of sources used to label imported data to 
-identify its origin. The sources node contains
+identify its origin. The sources node contains zero or many source nodes
     
 - Source nodes (zero-many)
-        
+
+Contains one required attribute, name.
+
+```xml
+	<sources>
+		<source  name="My_data" type="CUSTOM" />
+		<source  name="prod_data" type="VERINT" />
+	</sources>
+```
+
 ### Ontology node (zero-one)
 
 The intents and entities defined in the ontology are used to annotate the 
@@ -56,18 +99,44 @@ training data, and thus form the interface between the NLU and the client
 application. The ontology node contains
 
 - **Intents** (zero-one).
+The intents node contains zero or many intent node. 
     - **intent nodes** (zero-many).
+    Each intent in the ontology has its own intent node.
         - **links node** (zero-one).
         An intent is linked to a set of entities. The links node describes the 
         entities that can be used in sample annotations for this intent.
+        
+        ```xml
+            <intent name="MAKE_WITHDRAWAL">
+                <links>
+                    <link conceptref="FROM_ACCOUNT"/>
+                    <link conceptref="TO_ACCOUNT"/>
+                    <link conceptref="AMOUNT"/>
+                </links>
+            </intent>
+        ```
+
 - **concepts** (one).
-The concepts node is composed by the ontology entities and contains:
+The concepts node is composed by the ontology entities and contains zero or many 
+concept node.
     - **concept** (zero-many).
-    Each concept node defines a single entity and contains:
+    Each concept node defines a single entity and contains zero or one relations 
+    node.
         - **relations** (zero-one).
         The relations node specifies the relation between entities. Relations 
-        can be of type isA, hasA, or hasReferrers. The relations node contains:
+        can be of type isA, hasA, or hasReferrers. The relations node contains 
+        zero or many relation.  
+        
             - **relation** (zero-many) 
+
+    ```xml
+        <concepts>
+            <concept name="AMOUNT"/>
+            <concept name="TO_ACCOUNT"/>
+            <concept name="FROM_ACCOUNT"/>
+            <concept name="ACCOUNT_TYPE"/>
+        </concepts>
+    ```
                 
 ### dictionary (zero-one)
 
