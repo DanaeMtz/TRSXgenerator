@@ -259,7 +259,6 @@ A List entity can have an associated dictionary. The dictionary is the list of s
     print(trsx_dictionaries(entities=literals))
     
   ```
-  
   ```xml
   <dictionaries>
       <dictionary conceptref="ACCOUNT_TYPE">
@@ -275,5 +274,3 @@ A List entity can have an associated dictionary. The dictionary is the list of s
     
 ### samples (zero-many)
     
-
-# Code Examples

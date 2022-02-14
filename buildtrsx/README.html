@@ -529,17 +529,26 @@ print(concepts_node)</code></pre>
 </div>
 <div id="dictionaries-zero-one" class="section level3">
 <h3>Dictionaries (zero-one)</h3>
-<p>A List entity can have an associated dictionary. The dictionary is the list of spoken forms that correspond to ‘mentions’ that are part of the entity. The dictionaries node contains zero or many dictionary nodes. - <strong>dictionary</strong> (zero-many) Contains a required attribute conceptref, which defines the entity the entries apply to. Each dictionary node contains zero or many entry nodes. - <strong>entry</strong> (zero-many)</p>
-<pre class="xml"><code>  &lt;dictionaries&gt;
-      &lt;dictionary conceptref=&quot;ACCOUNT_TYPE&quot;&gt;
-          &lt;entry literal=&quot;CELI&quot; value=&quot;CELI&quot;/&gt;
-          &lt;entry literal=&quot;Compte d&#39;épargne-retraite&quot; value=&quot;REER&quot;/&gt;
-          &lt;entry literal=&quot;Compte libre d’impôt&quot; value=&quot;CELI&quot;/&gt;
-          &lt;entry literal=&quot;R trois E&quot; value=&quot;REEE&quot;/&gt;
-          &lt;entry literal=&quot;REEE&quot; value=&quot;REEE&quot;/&gt;
-          &lt;entry literal=&quot;REER&quot; value=&quot;REER&quot;/&gt;
-      &lt;/dictionary&gt;
-  &lt;/dictionaries&gt;</code></pre>
+<p>A List entity can have an associated dictionary. The dictionary is the list of spoken forms that correspond to ‘mentions’ that are part of the entity. The dictionaries node contains zero or many dictionary nodes. - <strong>dictionary</strong> (zero-many) Contains a required attribute conceptref, which defines the entity the entries apply to. Each dictionary node contains zero or many entry nodes. - <strong>entry</strong> (zero-many) ```python from buildtrsx.build_dictionaries.build_dict import trsx_dictionaries</p>
+<pre><code>account_type = {
+    &quot;CELI&quot;: [&quot;CELI&quot;, &quot;Compte libre d’impôt&quot;],
+    &quot;REER&quot;: [&quot;REER&quot;, &quot;Compte d’épargne-retraite&quot;],
+    &quot;REEE&quot;: [&quot;REEE&quot;, &quot;R trois E&quot;],
+}
+
+literals = {&quot;ACCOUNT_TYPE&quot;: account_type}
+print(trsx_dictionaries(entities=literals))</code></pre>
+<pre><code>```xml
+&lt;dictionaries&gt;
+    &lt;dictionary conceptref=&quot;ACCOUNT_TYPE&quot;&gt;
+        &lt;entry literal=&quot;CELI&quot; value=&quot;CELI&quot;/&gt;
+        &lt;entry literal=&quot;Compte d&#39;épargne-retraite&quot; value=&quot;REER&quot;/&gt;
+        &lt;entry literal=&quot;Compte libre d’impôt&quot; value=&quot;CELI&quot;/&gt;
+        &lt;entry literal=&quot;R trois E&quot; value=&quot;REEE&quot;/&gt;
+        &lt;entry literal=&quot;REEE&quot; value=&quot;REEE&quot;/&gt;
+        &lt;entry literal=&quot;REER&quot; value=&quot;REER&quot;/&gt;
+    &lt;/dictionary&gt;
+&lt;/dictionaries&gt;</code></pre>
 </div>
 <div id="samples-zero-many" class="section level3">
 <h3>samples (zero-many)</h3>
