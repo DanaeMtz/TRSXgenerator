@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project xmlns:nuance="https://developer.nuance.com/mix/nlu/trsx" xml:lang="eng-USA" nuance:version="2.5" nuance:enginePackVersion="hosted">
+    <sources>
+        <source name="nuance_custom_data" displayName="nuance_custom_data" version="1.0" type="CUSTOM" useForOOV="true"/>
+    </sources>
+    <ontology base="http://localhost:8080/resources/ontology-1.0.xml">
+        <intents>
+            <intent name="OPEN_ACCOUNT">
+                <links>
+                    <link conceptref="ACCOUNT_TYPE"/>
+                </links>
+            </intent>
+            <intent name="REQUEST_BALANCE">
+                <links>
+                    <link conceptref="ACCOUNT_TYPE"/>
+                </links>
+            </intent>
+            <intent name="MAKE_INVESTMENT">
+                <links>
+                    <link conceptref="AMOUNT"/>
+                    <link conceptref="TO_ACCOUNT"/>
+                    <link conceptref="FROM_ACCOUNT"/>
+                </links>
+            </intent>
+            <intent name="MAKE_WITHDRAWAL">
+                <links>
+                    <link conceptref="AMOUNT"/>
+                    <link conceptref="TO_ACCOUNT"/>
+                    <link conceptref="FROM_ACCOUNT"/>
+                </links>
+            </intent>
+            <intent name="REQUEST_FOLLOW_UP">
+                <links>
+                    <link conceptref="ACCOUNT_TYPE"/>
+                </links>
+            </intent>
+            <intent name="MAKE_AMENDMENT">
+                <links>
+                    <link conceptref="ACCOUNT_TYPE"/>
+                </links>
+            </intent>
+        </intents>
+        <concepts>
+            <concept name="AMOUNT">
+                <relations>
+                    <relation type="isA" conceptref="nuance_AMOUNT"/>
+                </relations>
+            </concept>
+            <concept name="TO_ACCOUNT">
+                <relations>
+                    <relation type="isA" conceptref="ACCOUNT_TYPE"/>
+                </relations>
+            </concept>
+            <concept name="FROM_ACCOUNT">
+                <relations>
+                    <relation type="isA" conceptref="ACCOUNT_TYPE"/>
+                </relations>
+            </concept>
+            <concept name="ACCOUNT_TYPE"/>
+        </concepts>
+    </ontology>
+    <dictionaries>
+        <dictionary conceptref="ACCOUNT_TYPE">
+            <entry literal="CELI" value="CELI"/>
+            <entry literal="Compte d'épargne-retraite" value="REER"/>
+            <entry literal="Compte libre d’impôt" value="CELI"/>
+            <entry literal="R trois E" value="REEE"/>
+            <entry literal="REEE" value="REEE"/>
+            <entry literal="REER" value="REER"/>
+        </dictionary>
+    </dictionaries>
+</project>

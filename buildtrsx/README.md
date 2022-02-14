@@ -43,7 +43,7 @@ The project node contains
 - zero or one metadata node
 - zero or one sources node 
 - zero or one ontology node 
-- zero or one dictionary node 
+- zero or one dictionaries node 
 - zero or many samples node 
 
 ```xml
@@ -124,10 +124,15 @@ concept node.
     node.
         - **relations** (zero-one).
         The relations node specifies the relation between entities. Relations 
-        can be of type isA, hasA, or hasReferrers. The relations node contains 
-        zero or many relation.  
+        can be of type **isA**, **hasA**, or **hasReferrers**. The relations 
+        node contains zero or many relation.  
         
             - **relation** (zero-many) 
+            The relation node has two required attributes: the type, that 
+            indicates the type of relation, and the conceptref, that indicates 
+            the name of entity to which the relation applies. See the second 
+            example below. 
+            
 
     ```xml
         <concepts>
@@ -137,132 +142,49 @@ concept node.
             <concept name="ACCOUNT_TYPE"/>
         </concepts>
     ```
-                
-### dictionary (zero-one)
+  
+    ```xml  
+        <concepts>
+            <concept name="AMOUNT">
+                <relations>
+                    <relation type="isA" conceptref="nuance_AMOUNT"/>
+                </relations>
+            </concept>
+            <concept name="TO_ACCOUNT">
+                <relations>
+                    <relation type="isA" conceptref="ACCOUNT_TYPE"/>
+                </relations>
+            </concept>
+            <concept name="FROM_ACCOUNT">
+                <relations>
+                    <relation type="isA" conceptref="ACCOUNT_TYPE"/>
+                </relations>
+            </concept>
+            <concept name="ACCOUNT_TYPE"/>
+        </concepts>
+    ```
+### Dictionaries (zero-one)
 
 A List entity can have an associated dictionary. The dictionary is the list of spoken forms that correspond to 
-'mentions' that are part of the entity. The dictionaries node contains:
+'mentions' that are part of the entity. The dictionaries node contains zero or many dictionary nodes.
   - **dictionary** (zero-many) Contains a required attribute conceptref, which defines the entity the entries 
-  apply to. Each dictionary node contains 
+  apply to. Each dictionary node contains zero or many entry nodes. 
     - **entry** (zero-many)
-            
+    
+  ```xml 
+    <dictionaries>
+        <dictionary conceptref="ACCOUNT_TYPE">
+            <entry literal="CELI" value="CELI"/>
+            <entry literal="Compte d'épargne-retraite" value="REER"/>
+            <entry literal="Compte libre d’impôt" value="CELI"/>
+            <entry literal="R trois E" value="REEE"/>
+            <entry literal="REEE" value="REEE"/>
+            <entry literal="REER" value="REER"/>
+        </dictionary>
+    </dictionaries>
+  ```
+    
 ### samples (zero-many)
     
 
 # Code Examples
-
-The build_project.py module contains the functions to manage the following nodes: 
-
-- sources 
-- metadata 
-
-```python
-
-from buildtrsx.build_project import trsx_sources_node
-
-source1 = {"type": "CUSTOM"}
-source2 = {
-    "uri": "http://localhost:80/my_local_dtv_domain",
-    "version": "1.0",
-    "type": "PREBUILT",
-}
-source3 = {
-    "uri": "http://localhost:80/ncs_ref_rejection_model",
-    "version": "1.0",
-    "type": "REJECTION",
-}
-source4 = {
-    "displayName": "nuance_custom_data",
-    "version": "1.0",
-    "type": "CUSTOM",
-    "useForOOV": "true",
-}
-
-sources = {
-    "IOT_Domain": source1,  # key (source' name) value (optional attributes)
-    "DTV_Domain": source2,
-    "NCSRef_Rejection": source3,
-    "My_data": None,
-    "nuance_custom_data": source4,
-}
-
-project_attributes = {
-    "xmlns:nuance": "https://developer.nuance.com/mix/nlu/trsx",
-    "xml:lang": "eng-USA",  # 'fra-CAN'
-    "nuance:enginePackVersion": "hosted",
-}
-
-# call the sources node
-sources_node = trsx_sources_node._original(sources=sources)
-
-# call the wrapped sources node
-wrapped_sources_node = trsx_sources_node(sources=sources, attributes=project_attributes)
-
-```  
-
-```python
-
-from buildtrsx.build_project import trsx_metadata_node
-
-# call the metadata node
-metadata_node = trsx_metadata_node._original(
-    author="Danae Martinez",
-    version="1.0.0",
-    description="my NLU model",
-    date="january 2022")
-    
-wrapped_metadata_node = trsx_metadata_node(
-    author="Danae Martinez",
-    version="1.0.0",
-    description="my NLU model",
-    date="january 2022",
-    attributes=project_attributes)    
-    
-```
-
-
-```  
-entity1_make_inv = {'conceptref':'FROM_ACCOUNT', 'sourceref': 'some_source'}
-entity2_make_inv = {'conceptref':'TO_ACCOUNT', 'sourceref': 'some_source'}
-entity3_make_inv = {'conceptref': 'ACCOUNT_TYPE', 'sourceref': 'some_source'}
-entity4_make_inv = {'conceptref': 'AMOUNT', 'sourceref': 'some_source'}
-entity1_open_acc = {'conceptref':"ACCOUNT_TYPE"}
-
-intent_entities = {"MAKE_INVESTMENT": [entity1_make_inv, 
-                                       entity2_make_inv, 
-                                       entity3_make_inv, 
-                                       entity4_make_inv],
-                   "OPEN_ACCOUNT" : [entity1_open_acc],
-                   "OUT_OF_DOMAIN" : [],
-                   "GOODBYE" : []}
-
-intents_node = trsx_intents_node(intents = intent_entities)
-``` 
-
-``` 
-entities = {"TO_ACCOUNT":{'type':"isA", 'conceptref':"ACCOUNT_TYPE"},
-            "FROM_ACCOUNT":{'t
-            ype':"isA", 'conceptref':"ACCOUNT_TYPE", "sourceref": "some source"},
-            "AMOUNT":{'type':"isA", 'conceptref':"nuance_AMOUNT"},
-            "BANK_ACCOUNT":{'type':"hasA", 'conceptref':["ACCOUNT_BALANCE", "ACCOUNT_NUMBER", "ACCOUNT_TYPE"]}}
-            
-concepts_node = trsx_concepts_node(entities = entities)            
-```  
-
-``` 
-intents_node = trsx_intents_node(intents = intent_entities)
-concepts_node = trsx_concepts_node(entities = entities)
-
-ontology_node = trsx_ontology_node(intents_node = intents_node,
-                                   concepts_node = concepts_node)
-```  
-
-```  
-account_type = {'CELI':['CELI','Compte d’épargne libre d’impôt', 'Compte libre d’impôt'],
-                'REER':['REER','Régime enregistré d’épargne retraite', 'Compte d’épargne-retraite']}
-
-entities_literals_dict = {"ACCOUNT_TYPE":account_type}
-trsx_dictionaries(entities = entities_literals_dict)
-```  
-
-
