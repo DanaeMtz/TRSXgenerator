@@ -246,18 +246,31 @@ A List entity can have an associated dictionary. The dictionary is the list of s
   - **dictionary** (zero-many) Contains a required attribute conceptref, which defines the entity the entries 
   apply to. Each dictionary node contains zero or many entry nodes. 
     - **entry** (zero-many)
+    ```python
+    from buildtrsx.build_dictionaries.build_dict import trsx_dictionaries
     
-  ```xml 
-    <dictionaries>
-        <dictionary conceptref="ACCOUNT_TYPE">
-            <entry literal="CELI" value="CELI"/>
-            <entry literal="Compte d'épargne-retraite" value="REER"/>
-            <entry literal="Compte libre d’impôt" value="CELI"/>
-            <entry literal="R trois E" value="REEE"/>
-            <entry literal="REEE" value="REEE"/>
-            <entry literal="REER" value="REER"/>
-        </dictionary>
-    </dictionaries>
+    account_type = {
+        "CELI": ["CELI", "Compte libre d’impôt"],
+        "REER": ["REER", "Compte d’épargne-retraite"],
+        "REEE": ["REEE", "R trois E"],
+    }
+    
+    literals = {"ACCOUNT_TYPE": account_type}
+    print(trsx_dictionaries(entities=literals))
+    
+  ```
+  
+  ```xml
+  <dictionaries>
+      <dictionary conceptref="ACCOUNT_TYPE">
+          <entry literal="CELI" value="CELI"/>
+          <entry literal="Compte d'épargne-retraite" value="REER"/>
+          <entry literal="Compte libre d’impôt" value="CELI"/>
+          <entry literal="R trois E" value="REEE"/>
+          <entry literal="REEE" value="REEE"/>
+          <entry literal="REER" value="REER"/>
+      </dictionary>
+  </dictionaries>
   ```
     
 ### samples (zero-many)
