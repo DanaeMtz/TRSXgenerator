@@ -272,5 +272,3 @@ A List entity can have an associated dictionary. The dictionary is the list of s
   </dictionaries>
   ```
     
-### samples (zero-many)
-    

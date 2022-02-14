@@ -143,3 +143,4 @@ pyvenv.cfg
 *.pyc
 */__pycache__/
 buildtrsx/__pycache__/build_project.cpython-38.pyc
+*.html
