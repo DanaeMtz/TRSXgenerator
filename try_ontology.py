@@ -1,40 +1,62 @@
-from buildtrsx.build_ontology.build_ontology import trsx_link_node, trsx_intents_node, \
-    trsx_relations_node, trsx_settings_node, trsx_concepts_node, trsx_ontology_node
+from buildtrsx.build_ontology.build_ontology import (
+    trsx_intents_node,
+    trsx_concepts_node,
+    trsx_gather_subnodes_ontology,
+)
+from buildtrsx.build_project import trsx_gather_nodes
 
-# build ontology script
-
-entity1_make_inv = {'conceptref':'FROM_ACCOUNT', 'sourceref': 'some_source'}
-entity2_make_inv = {'conceptref':'TO_ACCOUNT', 'sourceref': 'some_source'}
-entity3_make_inv = {'conceptref': 'ACCOUNT_TYPE', 'sourceref': 'some_source'}
-entity4_make_inv = {'conceptref': 'AMOUNT', 'sourceref': 'some_source'}
-entity1_open_acc = {'conceptref':"ACCOUNT_TYPE"}
-
-
-intent_entities = {"MAKE_INVESTMENT": [entity1_make_inv,
-                                       entity2_make_inv,
-                                       entity3_make_inv,
-                                       entity4_make_inv],
-                   "OPEN_ACCOUNT" : [entity1_open_acc],
-                   "OUT_OF_DOMAIN" : [],
-                   "GOODBYE" : []}
-
-print(trsx_link_node(entity = intent_entities["MAKE_INVESTMENT"][0]))
-intents_node = trsx_intents_node(intents = intent_entities)
+# example of intents node
+intent = {
+    "MAKE_WITHDRAWAL": [
+        {"conceptref": "FROM_ACCOUNT"},
+        {"conceptref": "TO_ACCOUNT"},
+        {"conceptref": "AMOUNT"},
+    ],
+    "MAKE_INVESTMENT": [
+        {"conceptref": "FROM_ACCOUNT"},
+        {"conceptref": "TO_ACCOUNT"},
+        {"conceptref": "AMOUNT"},
+    ],
+}
+intents_node = trsx_intents_node(intents=intent)
 print(intents_node)
 
-entities = {"TO_ACCOUNT":{'type':"isA", 'conceptref':"ACCOUNT_TYPE"},
-            "FROM_ACCOUNT":{'type':"isA", 'conceptref':"ACCOUNT_TYPE", "sourceref": "some source"},
-            "AMOUNT":{'type':"isA", 'conceptref':"nuance_AMOUNT"},
-            "BANK_ACCOUNT":{'type':"hasA", 'conceptref':["ACCOUNT_BALANCE", "ACCOUNT_NUMBER", "ACCOUNT_TYPE"]}}
+# example of concepts (entities) node
+entities = {
+    "TO_ACCOUNT": {},
+    "FROM_ACCOUNT": {},
+    "AMOUNT": {},
+    "ACCOUNT_TYPE": {},
+}
 
-print(trsx_relations_node(entity_rel = entities["FROM_ACCOUNT"]))
-print(trsx_relations_node(entity_rel = entities["BANK_ACCOUNT"]))
+concepts_node = trsx_concepts_node(entities=entities)
+print(concepts_node)
 
-setting = {"ACCOUNT_TYPE":{'name':'isSensitive', 'value':"true"},
-           "BANK_ACCOUNT":{'name':'isSensitive', 'value':"true"}}
+# example 2: add relations
+entities_rel = {
+    "TO_ACCOUNT": {"type": "isA", "conceptref": "ACCOUNT_TYPE"},
+    "FROM_ACCOUNT": {"type": "isA", "conceptref": "ACCOUNT_TYPE"},
+    "AMOUNT": {"type": "isA", "conceptref": "nuance_AMOUNT"},
+    "ACCOUNT_TYPE": {},
+}
 
-print(trsx_settings_node(setting = setting["BANK_ACCOUNT"]))
+concepts_node2 = trsx_concepts_node(entities=entities_rel)
+print(concepts_node2)
 
-concepts_node = trsx_concepts_node(entities = entities)
-ontology_node = trsx_ontology_node(intents_node = intents_node,
-                                   concepts_node = concepts_node)
+# gather the two sub-nodes and wrap them into the ontology node
+ontology_node = trsx_gather_subnodes_ontology(
+    intents_node=intents_node, concepts_node=concepts_node
+)
+print(ontology_node)
+
+# wrap with in the project's node
+project_attributes = {
+    "xmlns:nuance": "https://developer.nuance.com/mix/nlu/trsx",
+    "xml:lang": "eng-USA",  # 'fra-CAN'
+    "nuance:enginePackVersion": "hosted",
+}
+
+project_node = trsx_gather_nodes(
+    ontology_node=ontology_node, attributes=project_attributes
+)
+print(project_node)

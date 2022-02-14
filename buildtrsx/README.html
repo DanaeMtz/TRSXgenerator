@@ -437,13 +437,39 @@ print(sources_node)</code></pre>
 <ul>
 <li><strong>links node</strong> (zero-one). An intent is linked to a set of entities. The links node describes the entities that can be used in sample annotations for this intent.</li>
 </ul>
-<pre class="xml"><code>    &lt;intent name=&quot;MAKE_WITHDRAWAL&quot;&gt;
-        &lt;links&gt;
-            &lt;link conceptref=&quot;FROM_ACCOUNT&quot;/&gt;
-            &lt;link conceptref=&quot;TO_ACCOUNT&quot;/&gt;
-            &lt;link conceptref=&quot;AMOUNT&quot;/&gt;
-        &lt;/links&gt;
-    &lt;/intent&gt;</code></pre></li>
+<pre class="python"><code>from buildtrsx.build_ontology.build_ontology import trsx_intents_node
+
+intent = {
+    &quot;MAKE_WITHDRAWAL&quot;: [
+        {&quot;conceptref&quot;: &quot;FROM_ACCOUNT&quot;},
+        {&quot;conceptref&quot;: &quot;TO_ACCOUNT&quot;},
+        {&quot;conceptref&quot;: &quot;AMOUNT&quot;},
+    ],
+    &quot;MAKE_INVESTMENT&quot;: [
+        {&quot;conceptref&quot;: &quot;FROM_ACCOUNT&quot;},
+        {&quot;conceptref&quot;: &quot;TO_ACCOUNT&quot;},
+        {&quot;conceptref&quot;: &quot;AMOUNT&quot;},
+    ],
+}
+
+intents_node = trsx_intents_node(intents = intent)
+print(intents_node)</code></pre>
+<pre class="xml"><code>    &lt;intents&gt;
+        &lt;intent name=&quot;MAKE_WITHDRAWAL&quot;&gt;
+            &lt;links&gt;
+                &lt;link conceptref=&quot;FROM_ACCOUNT&quot; /&gt;
+                &lt;link conceptref=&quot;TO_ACCOUNT&quot; /&gt;
+                &lt;link conceptref=&quot;AMOUNT&quot; /&gt;
+            &lt;/links&gt;
+        &lt;/intent&gt;
+        &lt;intent name=&quot;MAKE_INVESTMENT&quot;&gt;
+            &lt;links&gt;
+                &lt;link conceptref=&quot;FROM_ACCOUNT&quot; /&gt;
+                &lt;link conceptref=&quot;TO_ACCOUNT&quot; /&gt;
+                &lt;link conceptref=&quot;AMOUNT&quot; /&gt;
+            &lt;/links&gt;
+        &lt;/intent&gt;
+    &lt;/intents&gt;</code></pre></li>
 </ul></li>
 <li><strong>concepts</strong> (one). The concepts node is composed by the ontology entities and contains zero or many concept node.
 <ul>
@@ -452,15 +478,33 @@ print(sources_node)</code></pre>
 <li><p><strong>relations</strong> (zero-one). The relations node specifies the relation between entities. Relations can be of type <strong>isA</strong>, <strong>hasA</strong>, or <strong>hasReferrers</strong>. The relations node contains zero or many relation.</p>
 <ul>
 <li><strong>relation</strong> (zero-many) The relation node has two required attributes: the type, that indicates the type of relation, and the conceptref, that indicates the name of entity to which the relation applies. See the second example below.</li>
-</ul></li>
-</ul></li>
 </ul>
+<pre class="python"><code>from buildtrsx.build_ontology.build_ontology import trsx_concepts_node
+
+entities = {
+    &quot;TO_ACCOUNT&quot;: {},
+    &quot;FROM_ACCOUNT&quot;: {},
+    &quot;AMOUNT&quot;: {},
+    &quot;ACCOUNT_TYPE&quot;: {},
+}
+
+concepts_node = trsx_concepts_node(entities=entities)
+print(concepts_node)</code></pre>
 <pre class="xml"><code>    &lt;concepts&gt;
         &lt;concept name=&quot;AMOUNT&quot;/&gt;
         &lt;concept name=&quot;TO_ACCOUNT&quot;/&gt;
         &lt;concept name=&quot;FROM_ACCOUNT&quot;/&gt;
         &lt;concept name=&quot;ACCOUNT_TYPE&quot;/&gt;
     &lt;/concepts&gt;</code></pre>
+<p>The inner dictionary contains the attributes of the relation node. If left empty, the relations node won’t be generated.</p>
+<pre class="python"><code>entities = {
+    &quot;TO_ACCOUNT&quot;: {&#39;type&#39;:&quot;isA&quot;, &#39;conceptref&#39;:&quot;ACCOUNT_TYPE&quot;},
+    &quot;FROM_ACCOUNT&quot;: {&#39;type&#39;:&quot;isA&quot;, &#39;conceptref&#39;:&quot;ACCOUNT_TYPE&quot;},
+    &quot;AMOUNT&quot;: {&#39;type&#39;:&quot;isA&quot;, &#39;conceptref&#39;:&quot;nuance_AMOUNT&quot;},
+    &quot;ACCOUNT_TYPE&quot;: {},
+}
+concepts_node = trsx_concepts_node(entities=entities)
+print(concepts_node)</code></pre>
 <pre class="xml"><code>    &lt;concepts&gt;
         &lt;concept name=&quot;AMOUNT&quot;&gt;
             &lt;relations&gt;
@@ -478,9 +522,13 @@ print(sources_node)</code></pre>
             &lt;/relations&gt;
         &lt;/concept&gt;
         &lt;concept name=&quot;ACCOUNT_TYPE&quot;/&gt;
-    &lt;/concepts&gt;</code></pre>
-<h3 id="dictionaries-zero-one">Dictionaries (zero-one)</h3></li>
+    &lt;/concepts&gt;</code></pre></li>
+</ul></li>
+</ul></li>
 </ul>
+</div>
+<div id="dictionaries-zero-one" class="section level3">
+<h3>Dictionaries (zero-one)</h3>
 <p>A List entity can have an associated dictionary. The dictionary is the list of spoken forms that correspond to ‘mentions’ that are part of the entity. The dictionaries node contains zero or many dictionary nodes. - <strong>dictionary</strong> (zero-many) Contains a required attribute conceptref, which defines the entity the entries apply to. Each dictionary node contains zero or many entry nodes. - <strong>entry</strong> (zero-many)</p>
 <pre class="xml"><code>  &lt;dictionaries&gt;
       &lt;dictionary conceptref=&quot;ACCOUNT_TYPE&quot;&gt;

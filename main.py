@@ -37,18 +37,3 @@ entities = {
 
 concepts_node = trsx_concepts_node(entities=entities)
 print(concepts_node)
-
-ontology_node = trsx_gather_subnodes_ontology(
-    intents_node=intents_node, concepts_node=concepts_node
-)
-print(ontology_node)
-
-# wrappe with the project's node
-print(
-    trsx_gather_nodes(
-        # metadata_node=metadata_node,
-        # sources_node=sources_node,
-        ontology_node=ontology_node,
-        # attributes=project_attributes,
-    )
-)

@@ -127,14 +127,43 @@ The intents node contains zero or many intent node.
         An intent is linked to a set of entities. The links node describes the 
         entities that can be used in sample annotations for this intent.
         
+        ```python
+        from buildtrsx.build_ontology.build_ontology import trsx_intents_node
+
+        intent = {
+            "MAKE_WITHDRAWAL": [
+                {"conceptref": "FROM_ACCOUNT"},
+                {"conceptref": "TO_ACCOUNT"},
+                {"conceptref": "AMOUNT"},
+            ],
+            "MAKE_INVESTMENT": [
+                {"conceptref": "FROM_ACCOUNT"},
+                {"conceptref": "TO_ACCOUNT"},
+                {"conceptref": "AMOUNT"},
+            ],
+        }
+        
+        intents_node = trsx_intents_node(intents = intent)
+        print(intents_node)
+        ```
+        
         ```xml
-            <intent name="MAKE_WITHDRAWAL">
-                <links>
-                    <link conceptref="FROM_ACCOUNT"/>
-                    <link conceptref="TO_ACCOUNT"/>
-                    <link conceptref="AMOUNT"/>
-                </links>
-            </intent>
+            <intents>
+            	<intent name="MAKE_WITHDRAWAL">
+            		<links>
+            			<link conceptref="FROM_ACCOUNT" />
+            			<link conceptref="TO_ACCOUNT" />
+            			<link conceptref="AMOUNT" />
+            		</links>
+            	</intent>
+            	<intent name="MAKE_INVESTMENT">
+            		<links>
+            			<link conceptref="FROM_ACCOUNT" />
+            			<link conceptref="TO_ACCOUNT" />
+            			<link conceptref="AMOUNT" />
+            		</links>
+            	</intent>
+            </intents>
         ```
 
 - **concepts** (one).
@@ -153,37 +182,63 @@ concept node.
             indicates the type of relation, and the conceptref, that indicates 
             the name of entity to which the relation applies. See the second 
             example below. 
+          
+            ```python
+            from buildtrsx.build_ontology.build_ontology import trsx_concepts_node
             
-
-    ```xml
-        <concepts>
-            <concept name="AMOUNT"/>
-            <concept name="TO_ACCOUNT"/>
-            <concept name="FROM_ACCOUNT"/>
-            <concept name="ACCOUNT_TYPE"/>
-        </concepts>
-    ```
-  
-    ```xml  
-        <concepts>
-            <concept name="AMOUNT">
-                <relations>
-                    <relation type="isA" conceptref="nuance_AMOUNT"/>
-                </relations>
-            </concept>
-            <concept name="TO_ACCOUNT">
-                <relations>
-                    <relation type="isA" conceptref="ACCOUNT_TYPE"/>
-                </relations>
-            </concept>
-            <concept name="FROM_ACCOUNT">
-                <relations>
-                    <relation type="isA" conceptref="ACCOUNT_TYPE"/>
-                </relations>
-            </concept>
-            <concept name="ACCOUNT_TYPE"/>
-        </concepts>
-    ```
+            entities = {
+                "TO_ACCOUNT": {},
+                "FROM_ACCOUNT": {},
+                "AMOUNT": {},
+                "ACCOUNT_TYPE": {},
+            }
+            
+            concepts_node = trsx_concepts_node(entities=entities)
+            print(concepts_node)
+            ```
+            ```xml
+                <concepts>
+                    <concept name="AMOUNT"/>
+                    <concept name="TO_ACCOUNT"/>
+                    <concept name="FROM_ACCOUNT"/>
+                    <concept name="ACCOUNT_TYPE"/>
+                </concepts>
+            ```
+            The inner dictionary contains the attributes of the relation node.
+            If left empty, the relations node won't be generated. 
+            
+            ```python
+            entities = {
+                "TO_ACCOUNT": {'type':"isA", 'conceptref':"ACCOUNT_TYPE"},
+                "FROM_ACCOUNT": {'type':"isA", 'conceptref':"ACCOUNT_TYPE"},
+                "AMOUNT": {'type':"isA", 'conceptref':"nuance_AMOUNT"},
+                "ACCOUNT_TYPE": {},
+            }
+            concepts_node = trsx_concepts_node(entities=entities)
+            print(concepts_node)
+            ```
+            
+            ```xml  
+                <concepts>
+                    <concept name="AMOUNT">
+                        <relations>
+                            <relation type="isA" conceptref="nuance_AMOUNT"/>
+                        </relations>
+                    </concept>
+                    <concept name="TO_ACCOUNT">
+                        <relations>
+                            <relation type="isA" conceptref="ACCOUNT_TYPE"/>
+                        </relations>
+                    </concept>
+                    <concept name="FROM_ACCOUNT">
+                        <relations>
+                            <relation type="isA" conceptref="ACCOUNT_TYPE"/>
+                        </relations>
+                    </concept>
+                    <concept name="ACCOUNT_TYPE"/>
+                </concepts>
+            ```
+            
 ### Dictionaries (zero-one)
 
 A List entity can have an associated dictionary. The dictionary is the list of spoken forms that correspond to 
