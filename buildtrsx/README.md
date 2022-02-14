@@ -67,6 +67,18 @@ The entry node contains the key-value pair that specifies the metadata. The
 entry node has the attribute key, which is a string. The entry's value can be 
 any string.
 
+```python
+from buildtrsx.build_project import trsx_metadata_node
+
+metadata_node = trsx_metadata_node(
+    author="Danae Martinez",
+    version="1.0.0",
+    description="my NLU model",
+    date="february 2022",
+)
+print(metadata_node)
+```
+
 ```xml
 	<metadata>
 		<entry key="author">Danae Martinez</entry>
@@ -85,10 +97,19 @@ identify its origin. The sources node contains zero or many source nodes
 
 Contains one required attribute, name.
 
+```python
+from buildtrsx.build_project import trsx_sources_node
+
+sources_nlu = {"My_data": {"type": "CUSTOM"}, "Prod_data": {"type": "VERINT"}}
+
+sources_node = trsx_sources_node(sources=sources_nlu)
+print(sources_node)
+```
+
 ```xml
 	<sources>
 		<source  name="My_data" type="CUSTOM" />
-		<source  name="prod_data" type="VERINT" />
+		<source  name="Prod_data" type="VERINT" />
 	</sources>
 ```
 

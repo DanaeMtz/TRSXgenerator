@@ -393,6 +393,15 @@ pre code {
 <li>Entry node (zero-many)</li>
 </ul>
 <p>The entry node contains the key-value pair that specifies the metadata. The entry node has the attribute key, which is a string. The entry’s value can be any string.</p>
+<pre class="python"><code>from buildtrsx.build_project import trsx_metadata_node
+
+metadata_node = trsx_metadata_node(
+    author=&quot;Danae Martinez&quot;,
+    version=&quot;1.0.0&quot;,
+    description=&quot;my NLU model&quot;,
+    date=&quot;february 2022&quot;,
+)
+print(metadata_node)</code></pre>
 <pre class="xml"><code>    &lt;metadata&gt;
         &lt;entry key=&quot;author&quot;&gt;Danae Martinez&lt;/entry&gt;
         &lt;entry key=&quot;version&quot;&gt;1.0.0&lt;/entry&gt;
@@ -407,9 +416,15 @@ pre code {
 <li>Source nodes (zero-many)</li>
 </ul>
 <p>Contains one required attribute, name.</p>
+<pre class="python"><code>from buildtrsx.build_project import trsx_sources_node
+
+sources_nlu = {&quot;My_data&quot;: {&quot;type&quot;: &quot;CUSTOM&quot;}, &quot;Prod_data&quot;: {&quot;type&quot;: &quot;VERINT&quot;}}
+
+sources_node = trsx_sources_node(sources=sources_nlu)
+print(sources_node)</code></pre>
 <pre class="xml"><code>    &lt;sources&gt;
         &lt;source  name=&quot;My_data&quot; type=&quot;CUSTOM&quot; /&gt;
-        &lt;source  name=&quot;prod_data&quot; type=&quot;VERINT&quot; /&gt;
+        &lt;source  name=&quot;Prod_data&quot; type=&quot;VERINT&quot; /&gt;
     &lt;/sources&gt;</code></pre>
 </div>
 <div id="ontology-node-zero-one" class="section level3">
