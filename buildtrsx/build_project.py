@@ -2,7 +2,7 @@ from yattag import Doc, indent
 
 
 def project_wrapper(func):
-    """ "encapsulates one node at a time"""
+    """encapsulates one node at a time"""
 
     def wrapper(nuance_ver: str = "2.5", attributes: dict = None, *args, **kwargs):
         """Encapsulate sources or metadata node and incorporate attributes for the project's node."""

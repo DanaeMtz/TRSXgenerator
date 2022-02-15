@@ -2,7 +2,7 @@ from yattag import Doc, indent
 
 
 def ontology_wrapper(func):
-    """ "encapsulates one node at a time"""
+    """encapsulates one node at a time"""
 
     def wrapper(
         base_attribute="http://localhost:8080/resources/ontology-1.0.xml",
@@ -25,6 +25,14 @@ def trsx_link_node(entity: dict) -> str:
     doc.stag("link", *entity.items())
     return indent(doc.getvalue(), indentation="\t")
 
+
+def trsx_links_node(entities: list):
+    """generate the links node"""
+    doc, tag, text = Doc().tagtext()
+    for entity in entities:
+        with tag("links"):
+            doc.asis(trsx_link_node(entity=entity))
+    return indent(doc.getvalue(), indentation="\t")
 
 def trsx_intents_node(intents: dict) -> str:
     """Generate the intents node"""
