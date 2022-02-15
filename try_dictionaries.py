@@ -1,4 +1,4 @@
-from buildtrsx.build_dictionaries.build_dict import trsx_dictionaries_node
+from buildtrsx.build_dictionaries.build_dict import trsx_dictionary_node, trsx_dictionaries_node
 from buildtrsx.build_project import trsx_gather_nodes
 
 account_type = {
@@ -6,6 +6,9 @@ account_type = {
     "REER": ["REER", "Compte d’épargne-retraite"],
     "REEE": ["REEE", "R trois E"],
 }
+
+dictionary_node = trsx_dictionary_node(entity="ACCOUNT_TYPE", literals=account_type)
+print(dictionary_node)
 
 literals = {"ACCOUNT_TYPE": account_type}
 dictionaries_node = trsx_dictionaries_node(entities=literals)
