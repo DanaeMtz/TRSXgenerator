@@ -7,9 +7,11 @@ from buildtrsx.build_ontology.build_ontology import (
 from buildtrsx.build_project import trsx_gather_nodes
 
 # example of links node
-value = [{"conceptref": "FROM_ACCOUNT"},
- {"conceptref": "TO_ACCOUNT"},
- {"conceptref": "AMOUNT"}]
+value = [
+    {"conceptref": "FROM_ACCOUNT"},
+    {"conceptref": "TO_ACCOUNT"},
+    {"conceptref": "AMOUNT"},
+]
 
 
 links_node = trsx_links_node(entities=value)
@@ -27,7 +29,7 @@ intent = {
         {"conceptref": "TO_ACCOUNT"},
         {"conceptref": "AMOUNT"},
     ],
-    "OUT_OF_DOMAIN":[]
+    "OUT_OF_DOMAIN": [],
 }
 
 

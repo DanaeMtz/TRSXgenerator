@@ -41,9 +41,7 @@ def trsx_intents_node(intents: dict) -> str:
         for key, value in intents.items():
             if value:
                 with tag("intent", name=key):
-                    with tag("links"):
-                        for subdict in value:
-                            doc.asis(trsx_link_node(entity=subdict))
+                    doc.asis(trsx_links_node(entities=value))
             else:
                 doc.stag("intent", name=key)
 
