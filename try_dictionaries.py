@@ -1,4 +1,4 @@
-from buildtrsx.build_dictionaries.build_dict import trsx_dictionaries
+from buildtrsx.build_dictionaries.build_dict import trsx_dictionaries_node
 from buildtrsx.build_project import trsx_gather_nodes
 
 account_type = {
@@ -8,7 +8,7 @@ account_type = {
 }
 
 literals = {"ACCOUNT_TYPE": account_type}
-dictionaries_node = trsx_dictionaries(entities=literals)
+dictionaries_node = trsx_dictionaries_node(entities=literals)
 print(dictionaries_node)
 
 project_attributes = {
