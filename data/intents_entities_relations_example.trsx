@@ -3,7 +3,7 @@
     <sources>
         <source name="nuance_custom_data" displayName="nuance_custom_data" version="1.0" type="CUSTOM" useForOOV="true"/>
     </sources>
-    <ontology base="http://localhost:8080/resources/ontology-1.0.xml">
+    <ontology>
         <intents>
             <intent name="OPEN_ACCOUNT">
                 <links>
