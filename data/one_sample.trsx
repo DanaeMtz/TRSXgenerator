@@ -67,9 +67,15 @@
         </concepts>
     </ontology>
     <samples>
-        <sample intentref="MAKE_INVESTMENT" count="1" excluded="false" fullyVerified="true">faire un dépôt de<annotation conceptref="AMOUNT">
-                <annotation conceptref="nuance_AMOUNT">1500</annotation>
-            </annotation>dollars à mon compte<annotation conceptref="ACCOUNT_TYPE">REER</annotation>
+        <sample intentref="MAKE_INVESTMENT" count="1" excluded="false" fullyVerified="true">faire un dépôt de
+            <annotation conceptref="AMOUNT">
+                <annotation conceptref="nuance_AMOUNT">
+                    1500
+                </annotation>
+            </annotation>dollars à mon compte
+            <annotation conceptref="ACCOUNT_TYPE">
+                REER
+            </annotation>
         </sample>
     </samples>
 </project>
