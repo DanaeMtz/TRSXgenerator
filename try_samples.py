@@ -21,23 +21,27 @@ samples = {
         "RESP",
     ],
 }
+# generate all possible utterances from one specific semantic signature
+utterances = generate_utterances(samples)
+print(utterances)
 
+# in order to annotate the utterances correctly, we need to know the relations
 entities = {
     "TO_ACCOUNT": {"type": "isA", "conceptref": "ACCOUNT_TYPE"},
     "FROM_ACCOUNT": {"type": "isA", "conceptref": "ACCOUNT_TYPE"},
     "AMOUNT": {"type": "isA", "conceptref": "nuance_AMOUNT"},
     "ACCOUNT_TYPE": {},
 }
+
 result = trsx_annotated_literals(entities=entities, samples=samples)
 
 samples.update(result)
 
-utterances = generate_utterances(samples)
+annotated_utterances = generate_utterances(samples)
 
 dict_utterances = generate_utterances_dict(
-    samples=utterances, samples_attr={"intentref": "MAKE_INVESTMENT"}
+    samples=annotated_utterances, samples_attr={"intentref": "MAKE_INVESTMENT"}
 )
 
 samples_node = trsx_samples_node(samples=dict_utterances)
-
 print(samples_node)

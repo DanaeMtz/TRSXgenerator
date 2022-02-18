@@ -2,7 +2,7 @@ from yattag import Doc, indent
 
 
 def trsx_sample_node(sample: str, sample_atr: dict) -> str:
-    """generate one sample node"""
+    """generate the sample node"""
     doc, tag, text = Doc().tagtext()
     with tag("sample", *sample_atr.items()):
         doc.asis(sample)
@@ -26,31 +26,29 @@ def trsx_annotation_node(entity: str, literal: str) -> str:
     return indent(doc.getvalue(), indentation="\t")
 
 
-def trsx_double_annotation_node(entity: str, literals: list) -> str:
-    """generate the annotations with two associated entities (type 'isA')"""
-    doc, tag, text = Doc().tagtext()
-    for literal in literals:
-        doc.asis(trsx_annotation_node(entity=entity, literal=literal))
-    return indent(doc.getvalue(), indentation="\t")
-
-
 def trsx_annotated_literals(entities: dict, samples: dict) -> dict:
-    """stock annotated literals in a dictionary"""
+    """stock annotated literals in a dictionary
+    Args:
+        entities: dictionary containing the relationships between entities
+        samples: dictionary containing the literals to the entities possessing a relationship
+    Returns:
+        result: dictionary containing the annotated literals with its corresponding labels
+    """
     nodes = list()
     result = dict()
-    for entity, relations in entities.items():
-        if entity in samples.keys() and relations["type"] == "isA":
+    for entity, relation in entities.items():
+        if entity in samples.keys() and relation["type"] == "isA":
             for literal in samples[entity]:
                 doc, tag, text = Doc().tagtext()
                 with tag("annotation", conceptref=entity):
                     doc.asis(
                         trsx_annotation_node(
-                            entity=relations["conceptref"], literal=literal
+                            entity=relation["conceptref"], literal=literal
                         )
                     )
-                node = indent(doc.getvalue(), indentation="\t")
-                nodes += [(entity, node)]
-
+                annotation_node = indent(doc.getvalue(), indentation="\t")
+                nodes += [(entity, annotation_node)]
+    # put the annotation nodes in a dictionary, entity as a key
     for key, value in nodes:
         result.setdefault(key, []).append(value)
 
