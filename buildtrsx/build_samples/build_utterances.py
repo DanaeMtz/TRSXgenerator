@@ -15,7 +15,7 @@ def concat_string(row):
 
 
 def generate_utterances(semantic_sig: dict) -> list:
-    """store all possible formulations in a list"""
+    """store all possible formulations for one semantic signature in a list"""
     df = expand_grid(dictionary=semantic_sig)
     return list(df.apply(concat_string, 1))
 
@@ -25,4 +25,4 @@ def generate_utterances_dict(samples: list, samples_attr: dict) -> dict:
     samples_dict = {}
     for sample in samples:
         samples_dict[sample] = samples_attr
-    return(samples_dict)
+    return samples_dict
