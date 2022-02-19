@@ -145,3 +145,5 @@ pyvenv.cfg
 buildtrsx/__pycache__/build_project.cpython-38.pyc
 *.html
 data_augmetation/
+data/
+outputs/
