@@ -11,7 +11,7 @@ version control process of NLU models, it is preferable to work with .trsx
 files, which are a special type of XML files that conforms to Nuance Mix 
 specifications. 
 
-Sometimes, it is more flexible work with separate files that manage the 
+Sometimes, it is more flexible to work with separate files that manage the 
 ontology, the dictionaries and the samples separately. This set of functions 
 allow users to automatically generate those separated files or one big file 
 with all components. The final output is a .trsx file that can be interpreted 
@@ -28,7 +28,7 @@ This package is composed by three sub-packages
 - build ontology 
 - build samples 
 
-The module build_project contains the functions to generate the metadata and 
+The module build_project.py contains the functions to generate the metadata and 
 sources node as well as the wrapper project function. 
 
 # TRSX file structure 
@@ -59,7 +59,7 @@ The project node contains
 ### Metadata node (zero-one)
 
 The metadata node lets you manage extra details about your project, such as 
-author or version.The metadata node contains zero or manu entry nodes. 
+author or version.The metadata node contains zero or many entry nodes. 
 
 - Entry node (zero-many)
 
@@ -80,22 +80,23 @@ print(metadata_node)
 ```
 
 ```xml
-	<metadata>
-		<entry key="author">Danae Martinez</entry>
-		<entry key="version">1.0.0</entry>
-		<entry key="description">my NLU model</entry>
-		<entry key="date">february 2022</entry>
-	</metadata>
+<metadata>
+	<entry key="author">Danae Martinez</entry>
+	<entry key="version">1.0.0</entry>
+	<entry key="description">my NLU model</entry>
+	<entry key="date">february 2022</entry>
+</metadata>
 ```
 
 ### Sources node (zero-one)
 
 The Sources node provides a list of sources used to label imported data to 
-identify its origin. The sources node contains zero or many source nodes
+identify its origin. The sources node contains zero or many source nodes.
     
 - Source nodes (zero-many)
 
-Contains one required attribute, name.
+Contains one required attribute, name. To label data, in the concept node you 
+set its `sourceref` attribute to the name of the source.
 
 ```python
 from buildtrsx.build_project import trsx_sources_node
@@ -107,10 +108,10 @@ print(sources_node)
 ```
 
 ```xml
-	<sources>
-		<source  name="My_data" type="CUSTOM" />
-		<source  name="Prod_data" type="VERINT" />
-	</sources>
+<sources>
+	<source  name="My_data" type="CUSTOM" />
+	<source  name="Prod_data" type="VERINT" />
+</sources>
 ```
 
 ### Ontology node (zero-one)
@@ -120,8 +121,8 @@ training data, and thus form the interface between the NLU and the client
 application. The ontology node contains
 
 - **Intents** (zero-one).
-The intents node contains zero or many intent node. 
-    - **intent nodes** (zero-many).
+The intents node contains zero or many intent nodes. 
+    - **intent node** (zero-many).
     Each intent in the ontology has its own intent node.
         - **links node** (zero-one).
         An intent is linked to a set of entities. The links node describes the 
@@ -271,4 +272,4 @@ A List entity can have an associated dictionary. The dictionary is the list of s
       </dictionary>
   </dictionaries>
   ```
-    
+### samples node (zero-many)  

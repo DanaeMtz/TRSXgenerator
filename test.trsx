@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project nuance:version="2.5" xmlns:nuance="https://developer.nuance.com/mix/nlu/trsx" xml:lang="fra-CAN" nuance:enginePackVersion="hosted">
+	<metadata>
+		<entry key="author">Danae Martinez</entry>
+		<entry key="version">1.0.0</entry>
+		<entry key="description">investment NLU model</entry>
+		<entry key="date">february 2022</entry>
+	</metadata>
+	<sources>
+		<source displayName="nuance_custom_data" version="1.0" type="CUSTOM" useForOOV="true" name="nuance_custom_data" />
+		<source displayName="verint" version="1.0" name="verint" />
+		<source displayName="cc_ana_cc" version="1.0" name="cc_ana_cc" />
+		<source name="my_data" />
+	</sources>
+	<ontology base="http://localhost:8080/resources/ontology-1.0.xml" />
+</project>
