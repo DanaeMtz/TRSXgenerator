@@ -11,15 +11,15 @@ def project_wrapper(func):
         if attributes is None:
             with tag("project", ("nuance:version", nuance_ver)):
                 doc.asis(func(*args, **kwargs))
-                doc.stag(
-                    "ontology", base="http://localhost:8080/resources/ontology-1.0.xml"
-                )
+                #doc.stag(
+                #    "ontology", base="http://localhost:8080/resources/ontology-1.0.xml"
+                #)
         else:
             with tag("project", ("nuance:version", nuance_ver), *attributes.items()):
                 doc.asis(func(*args, **kwargs))
-                doc.stag(
-                    "ontology", base="http://localhost:8080/resources/ontology-1.0.xml"
-                )
+                #doc.stag(
+                #    "ontology", base="http://localhost:8080/resources/ontology-1.0.xml"
+                #)
         return indent(doc.getvalue(), indentation="\t")
     wrapper._original = func
     return wrapper

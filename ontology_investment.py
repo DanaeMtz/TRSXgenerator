@@ -5,10 +5,10 @@ from buildtrsx.build_project import (
 )
 from buildtrsx.build_ontology.build_ontology import (
     trsx_intents_node,
-    trsx_links_node,
     trsx_concepts_node,
     trsx_gather_subnodes_ontology,
 )
+
 # metadata node
 metadata_node = trsx_metadata_node(
     author="Danae Martinez",
@@ -63,32 +63,41 @@ intents = {
     "OPEN_ACCOUNT": [{"conceptref": "ACCOUNT_TYPE"}],
     "REQUEST_BALANCE": [{"conceptref": "ACCOUNT_TYPE"}],
     "OUT_OF_DOMAIN": [],
-    "GOODBYE": []
+    "GOODBYE": [],
 }
 
-intents_node = trsx_intents_node(intents=intent)
+# link_node = trsx_link_node(entity=intents["MAKE_WITHDRAWAL"][0])
+# links_node = trsx_links_node(entities=intents["MAKE_WITHDRAWAL"])
+intents_node = trsx_intents_node(intents=intents)
 
 entities = {
+    "AMOUNT": {"type": "isA", "conceptref": "nuance_AMOUNT"},
     "TO_ACCOUNT": {"type": "isA", "conceptref": "ACCOUNT_TYPE"},
     "FROM_ACCOUNT": {"type": "isA", "conceptref": "ACCOUNT_TYPE"},
-    "AMOUNT": {"type": "isA", "conceptref": "nuance_AMOUNT"},
-    "INVESTMENT_ACCOUNT": {"type": "hasA", "conceptref": ["ACCOUNT_TYPE", "ACCOUNT_NUMBER", "ACCOUNT_BALANCE"]},
     "ACCOUNT_TYPE": {},
-
+    "ACCOUNT_BALANCE": {"type": "isA", "conceptref": "nuance_AMOUNT"},
+    "INVESTMENT_ACCOUNT": {
+        "type": "hasA",
+        "conceptref": ["ACCOUNT_TYPE", "ACCOUNT_NUMBER", "ACCOUNT_BALANCE"],
+    },
+    "COMMAND": {},
+    "DATE_TRANSACTION": {"type": "isA", "conceptref": "DATE"},
+    "OUI_NON": {"type": "isA", "conceptref": "YES_NO"},
 }
 
 concepts_node = trsx_concepts_node(entities=entities)
-print(concepts_node)
 
-
+# gather the two sub-nodes and wrap them into the ontology node
+ontology_node = trsx_gather_subnodes_ontology(
+    intents_node=intents_node, concepts_node=concepts_node
+)
 
 trsx = trsx_gather_nodes(
     metadata_node=metadata_node,
     sources_node=sources_node,
+    ontology_node=ontology_node,
     attributes=project_attributes,
 )
 
-print(trsx)
-
-with open("test.trsx", "w", encoding="utf-8") as f:
+with open("outputs/test.trsx", "w", encoding="utf-8") as f:
     f.write(trsx)

@@ -171,8 +171,10 @@ The intents node contains zero or many intent nodes.
 The concepts node is composed by the ontology entities and contains zero or many 
 concept node.
     - **concept** (zero-many).
-    Each concept node defines a single entity and contains zero or one relations 
-    node.
+    Each concept node defines a single entity and contains zero or one settings
+    and relations node.
+        - **settings** (zero-one).Documentation about this specific node is 
+        quite incomplete in the Nuance documentation. 
         - **relations** (zero-one).
         The relations node specifies the relation between entities. Relations 
         can be of type **isA**, **hasA**, or **hasReferrers**. The relations 
@@ -198,12 +200,12 @@ concept node.
             print(concepts_node)
             ```
             ```xml
-                <concepts>
-                    <concept name="AMOUNT"/>
-                    <concept name="TO_ACCOUNT"/>
-                    <concept name="FROM_ACCOUNT"/>
-                    <concept name="ACCOUNT_TYPE"/>
-                </concepts>
+            <concepts>
+                <concept name="AMOUNT"/>
+                <concept name="TO_ACCOUNT"/>
+                <concept name="FROM_ACCOUNT"/>
+                <concept name="ACCOUNT_TYPE"/>
+            </concepts>
             ```
             The inner dictionary contains the attributes of the relation node.
             If left empty, the relations node won't be generated. 
@@ -247,29 +249,31 @@ A List entity can have an associated dictionary. The dictionary is the list of s
   - **dictionary** (zero-many) Contains a required attribute conceptref, which defines the entity the entries 
   apply to. Each dictionary node contains zero or many entry nodes. 
     - **entry** (zero-many)
-    ```python
-    from buildtrsx.build_dictionaries.build_dict import trsx_dictionaries
     
-    account_type = {
-        "CELI": ["CELI", "Compte libre d’impôt"],
-        "REER": ["REER", "Compte d’épargne-retraite"],
-        "REEE": ["REEE", "R trois E"],
-    }
+```python
+from buildtrsx.build_dictionaries.build_dict import trsx_dictionaries
+
+account_type = {
+    "CELI": ["CELI", "Compte libre d’impôt"],
+    "REER": ["REER", "Compte d’épargne-retraite"],
+    "REEE": ["REEE", "R trois E"],
+}
+
+literals = {"ACCOUNT_TYPE": account_type}
+print(trsx_dictionaries(entities=literals))
+```
     
-    literals = {"ACCOUNT_TYPE": account_type}
-    print(trsx_dictionaries(entities=literals))
-    
-  ```
-  ```xml
-  <dictionaries>
-      <dictionary conceptref="ACCOUNT_TYPE">
-          <entry literal="CELI" value="CELI"/>
-          <entry literal="Compte d'épargne-retraite" value="REER"/>
-          <entry literal="Compte libre d’impôt" value="CELI"/>
-          <entry literal="R trois E" value="REEE"/>
-          <entry literal="REEE" value="REEE"/>
-          <entry literal="REER" value="REER"/>
-      </dictionary>
-  </dictionaries>
-  ```
+```xml
+<dictionaries>
+    <dictionary conceptref="ACCOUNT_TYPE">
+        <entry literal="CELI" value="CELI"/>
+        <entry literal="Compte d'épargne-retraite" value="REER"/>
+        <entry literal="Compte libre d’impôt" value="CELI"/>
+        <entry literal="R trois E" value="REEE"/>
+        <entry literal="REEE" value="REEE"/>
+        <entry literal="REER" value="REER"/>
+    </dictionary>
+</dictionaries>
+```
+  
 ### samples node (zero-many)  

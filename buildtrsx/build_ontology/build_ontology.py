@@ -29,10 +29,11 @@ def trsx_link_node(entity: dict) -> str:
 def trsx_links_node(entities: list):
     """generate the links node"""
     doc, tag, text = Doc().tagtext()
-    for entity in entities:
-        with tag("links"):
+    with tag("links"):
+        for entity in entities:
             doc.asis(trsx_link_node(entity=entity))
     return indent(doc.getvalue(), indentation="\t")
+
 
 def trsx_intents_node(intents: dict) -> str:
     """Generate the intents node"""
