@@ -93,11 +93,10 @@ ontology_node = trsx_gather_subnodes_ontology(
 )
 
 trsx = trsx_gather_nodes(
-    metadata_node=metadata_node,
     sources_node=sources_node,
     ontology_node=ontology_node,
     attributes=project_attributes,
 )
 
-with open("outputs/test.trsx", "w", encoding="utf-8") as f:
+with open("outputs/ontology_test.trsx", "w", encoding="utf-8") as f:
     f.write(trsx)
