@@ -38,15 +38,16 @@ global_commands = {
 literals = {"ACCOUNT_TYPE": account_type, "COMMAND": global_commands}
 
 dictionaries_node = trsx_dictionaries_node(entities=literals)
-print(dictionaries_node)
 
 project_attributes = {
     "xmlns:nuance": "https://developer.nuance.com/mix/nlu/trsx",
-    "xml:lang": "eng-USA",  # 'fra-CAN'
+    "xml:lang": "fra-CAN",
     "nuance:enginePackVersion": "hosted",
 }
 
-project_node = trsx_gather_nodes(
+trsx = trsx_gather_nodes(
     dictionaries_node=dictionaries_node, attributes=project_attributes
 )
-print(project_node)
+
+with open("outputs/dictionaries_test.trsx", "w", encoding="utf-8") as f:
+    f.write(trsx)

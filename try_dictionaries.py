@@ -1,7 +1,6 @@
 from buildtrsx.build_dictionaries.build_dict import trsx_dictionary_node, trsx_dictionaries_node
 from buildtrsx.build_project import trsx_gather_nodes
 
-
 account_type = {
     "CELI": ["CELI", "Compte libre d’impôt"],
     "REER": ["REER", "Compte d’épargne-retraite"],

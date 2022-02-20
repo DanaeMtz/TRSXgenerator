@@ -13,6 +13,12 @@ def concat_string(row):
     """paste all string columns from one row"""
     return " ".join(row)
 
+def generate_utterances_df(semantic_sig: dict):
+    """store all possible formulations for one semantic signature in a list"""
+    df = expand_grid(dictionary=semantic_sig)
+    #print(df.head())
+    return df.apply(concat_string, 1)
+
 
 def generate_utterances(semantic_sig: dict) -> list:
     """store all possible formulations for one semantic signature in a list"""
