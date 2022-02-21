@@ -280,5 +280,127 @@ print(trsx_dictionaries(entities=literals))
 
 Samples are sentences that are used to train your NLU model. Samples are labeled with intents and annotated with entities. The samples node contains zero or many sample node and each sample node contains zero or many annotation node
 
+The data augmentation using semantic signatures can be done at the same time as the node construction and annotation process. The example below show how to generate a samples node from a dictionary representing one phase structure corresponding to a particular semantic signature. 
+
+```python
+
+from buildtrsx.build_samples.build_utterances import (
+    generate_utterances,
+    generate_utterances_dict,
+)
+from buildtrsx.build_samples.build_samples import trsx_samples_node
+
+samples = {
+    "action_verb": ["take", "transfer", "withdraw"],
+    "origin_prep": ["from my"],
+    "FROM_ACCOUNT": ["checking account", "savings account"],
+    "destination_prep": ["to my", "over to my", "into my", "to put in my"],
+    "TO_ACCOUNT": [
+        "TFSA",
+        "Tax-Free Savings Account",
+        "CELI",
+        "RRSP",
+        "RSP",
+        "RESP",
+    ],
+}
+
+utterances = generate_utterances(samples, sample_size=5)
+
+dict_utterances = generate_utterances_dict(
+    samples=utterances,
+    samples_attr={"intentref": "MAKE_INVESTMENT"}
+)
+
+samples_node = trsx_samples_node(samples=dict_utterances)
+print(samples_node)
+```
+
+```xml
+<samples>
+	<sample intentref="MAKE_INVESTMENT">withdraw from my savings account to my RRSP</sample>
+	<sample intentref="MAKE_INVESTMENT">transfer from my checking account to put in my Tax-Free Savings Account</sample>
+	<sample intentref="MAKE_INVESTMENT">transfer from my savings account to put in my RESP</sample>
+	<sample intentref="MAKE_INVESTMENT">take from my savings account to my Tax-Free Savings Account</sample>
+	<sample intentref="MAKE_INVESTMENT">withdraw from my savings account into my RESP</sample>
+</samples>
+```
+
+It is also possible to annotate samples as a pre-requisite of the samples node construction. 
+
+```python
+from buildtrsx.build_samples.build_samples import (
+    trsx_annotated_literals,
+    trsx_samples_node,
+)
+from buildtrsx.build_samples.build_utterances import (
+    generate_utterances,
+    generate_utterances_dict,
+)
+
+entities = {
+    "TO_ACCOUNT": {"type": "isA", "conceptref": "ACCOUNT_TYPE"},
+    "FROM_ACCOUNT": {"type": "isA", "conceptref": "ACCOUNT_TYPE"},
+    "AMOUNT": {"type": "isA", "conceptref": "nuance_AMOUNT"},
+    "ACCOUNT_TYPE": {},
+}
+
+samples_ann = trsx_annotated_literals(entities=entities, samples=samples)
+samples.update(samples_ann)
+
+annotated_utterances = generate_utterances(samples, sample_size=5)
+
+dict_utterances = generate_utterances_dict(
+    samples=annotated_utterances,
+    samples_attr={"intentref": "MAKE_INVESTMENT"}
+)
+
+samples_node = trsx_samples_node(samples=dict_utterances)
+print(samples_node)
+```
 
 
+```xml
+<samples>
+	<sample intentref="MAKE_INVESTMENT">withdraw from my 
+	    <annotation conceptref="FROM_ACCOUNT">
+	        <annotation conceptref="ACCOUNT_TYPE">checking account </annotation>
+	    </annotation> to put in my 
+        <annotation conceptref="TO_ACCOUNT">
+            <annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+        </annotation>
+    </sample>
+	<sample intentref="MAKE_INVESTMENT">take from my 
+        <annotation conceptref="FROM_ACCOUNT">
+            <annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+        </annotation> into my 
+        <annotation conceptref="TO_ACCOUNT">
+            <annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+        </annotation>
+    </sample>
+	<sample intentref="MAKE_INVESTMENT">withdraw from my 
+        <annotation conceptref="FROM_ACCOUNT">
+            <annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+        </annotation> into my 
+        <annotation conceptref="TO_ACCOUNT">
+            <annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+        </annotation>
+    </sample>
+	<sample intentref="MAKE_INVESTMENT">transfer from my 
+        <annotation conceptref="FROM_ACCOUNT">
+            <annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+        </annotation> into my 
+        <annotation conceptref="TO_ACCOUNT">
+            <annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+        </annotation>
+    </sample>
+	<sample intentref="MAKE_INVESTMENT">take from my 
+        <annotation conceptref="FROM_ACCOUNT">
+            <annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+        </annotation> into my 
+        <annotation conceptref="TO_ACCOUNT">
+            <annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+        </annotation>
+    </sample>
+</samples>
+```
