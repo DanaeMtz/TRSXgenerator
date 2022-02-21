@@ -16,7 +16,6 @@ def concat_string(row):
 def generate_utterances_df(semantic_sig: dict):
     """store all possible formulations for one semantic signature in a list"""
     df = expand_grid(dictionary=semantic_sig)
-    #print(df.head())
     return df.apply(concat_string, 1)
 
 
