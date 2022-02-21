@@ -62,7 +62,7 @@ SS1_S7 = {
 
 SS2_S1 = {
     "action_verb": ["transfer", "take"],
-    "AMOUNT": ["500 dollars", "500 bucks"],
+    "AMOUNT": ["100 dollars", "500 dollars", "1200 dollars", "2000 dollars", "300 bucks", "700 bucks"],
     "destination_prep": ["to my", "over to my", "into my", "to put in my"],
     "TO_ACCOUNT": ["TFSA", "Tax-Free Savings Account", "CELI", "RRSP", "RSP", "RESP"],
 }
@@ -97,7 +97,7 @@ SS3_S2 = {
 
 SS4_S1 = {
     "action_verb": ["take", "transfer", "withdraw"],
-    "AMOUNT": ["500 dollars", "500 bucks"],
+    "AMOUNT": ["200 dollars", "700 dollars", "1500 dollars", "2500 dollars", "600 bucks", "900 bucks"],
     "origin_prep": ["from my"],
     "FROM_ACCOUNT": ["chequing account", "checking account", "savings account"],
     "destination_prep": ["to my", "over to my", "into my", "to put in my"],

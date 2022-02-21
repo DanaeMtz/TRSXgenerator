@@ -45,14 +45,6 @@ make_inv_e1 <- function(action_verb = intersect(Inv_verb_EN, c("transfer", "take
   return(as.data.frame(utterances))
 }
 
-
-expand.grid(intersect(Inv_verb_EN, c("transfer", "take", "withdraw"))
-            , "from my"
-            , Reg_account_EN
-            , c("to", "over to", "into", "to put in")
-            , "my"
-            , Inv_account_EN)
-
 make_inv_e2 <- function(action_verb = intersect(Inv_verb_EN, c("transfer", "take", "make a transfer"))
                         , orig_acc = Reg_account_EN
                         , inv_acc = Inv_account_EN
