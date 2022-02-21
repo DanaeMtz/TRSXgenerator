@@ -277,3 +277,8 @@ print(trsx_dictionaries(entities=literals))
 ```
   
 ### samples node (zero-many)  
+
+Samples are sentences that are used to train your NLU model. Samples are labeled with intents and annotated with entities. The samples node contains zero or many sample node and each sample node contains zero or many annotation node
+
+
+
