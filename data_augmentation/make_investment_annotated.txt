@@ -1,0 +1,900 @@
+make a contribution to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;TFSA&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make contribution to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;Tax-Free Savings Account&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make a contribution to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;RESP&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make a transfer to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;CELI&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make a contribution to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;CELI&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make contribution to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;CELI&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+contribute to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;RSP&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make a transfer to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;RSP&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make a transfer to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;TFSA&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make contribution to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;RSP&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make contribution to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;RESP&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make a transfer to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;Tax-Free Savings Account&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make a contribution to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;RRSP&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+contribute to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;Tax-Free Savings Account&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make contribution to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;TFSA&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make a transfer to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;RRSP&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make contribution to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;RRSP&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+contribute to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;RESP&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+contribute to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;CELI&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+make a contribution to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">&lt;annotation conceptref="TO_ACCOUNT"&gt;
+	&lt;annotation conceptref="ACCOUNT_TYPE"&gt;RSP&lt;/annotation&gt;
+&lt;/annotation&gt;</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+recurring purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+recurring purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+recurring purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+recurring purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+recurring purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+recurring purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+recurring purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+periodic purchase for my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+buy funds from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+buy funds from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+buy funds from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+buy funds from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+buy funds from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+buy funds from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+buy funds from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+buy a GIC from my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+invest in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+take funds to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+transfer money into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer money to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+take the funds over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer funds to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer the funds to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+transfer funds over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+transfer money over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+transfer the funds over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer some money over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer the funds to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+take some money to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+transfer funds over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+take the funds over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+transfer some money to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+take the funds into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+take money to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+take the funds into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer some money to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer funds to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+use my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+use my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+convert my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+trade my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+trade my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+convert my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+trade my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+trade my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+convert my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+convert my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+trade my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+convert my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+use my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+convert my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+trade my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+convert my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+use my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+use my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+use my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+use my points to add to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+trade my points for <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+forward my points for <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+trade my points towards <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+trade my points for <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+forward my points towards <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+forward my points for <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+trade my points for <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+trade my points for <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+trade my points towards <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+forward my points towards <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+convert my points for <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+trade my points towards <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+forward my points for <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+forward my points towards <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+forward my points for <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+forward my points towards <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+convert my points towards <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+forward my points for <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+convert my points towards <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+convert my points towards <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">500 dollars</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">300 bucks</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">2000 dollars</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">300 bucks</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">300 bucks</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">2000 dollars</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">300 bucks</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">500 dollars</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">2000 dollars</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">500 dollars</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">100 dollars</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">1200 dollars</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">2000 dollars</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">100 dollars</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">300 bucks</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">700 bucks</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">700 bucks</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">100 dollars</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">1200 dollars</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">1200 dollars</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+withdraw from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+take from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+take from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+take from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+withdraw from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+withdraw from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+take from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+take from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+take from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+transfer from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+transfer from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+take from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+withdraw from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+withdraw from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+transfer from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+transfer from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+take from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+withdraw from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+withdraw funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+take funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer the funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer some money from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer some money from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer some money from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+withdraw funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer some money from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+transfer funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+take funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+take the funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+withdraw some money from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+take funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+withdraw money from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+withdraw funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+withdraw some money from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+withdraw funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+withdraw the funds from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">600 bucks</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">1500 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+withdraw <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">700 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+withdraw <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">1500 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">200 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">600 bucks</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>
+withdraw <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">200 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">600 bucks</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to put in my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">200 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">200 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">700 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">1500 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">1500 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+take <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">200 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RSP</annotation>
+</annotation>
+withdraw <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">700 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">2500 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">900 bucks</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> over to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">TFSA</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">700 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
+</annotation> to my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">2500 dollars</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">chequing account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
+</annotation>
+transfer <annotation conceptref="AMOUNT">
+	<annotation conceptref="nuance_AMOUNT">900 bucks</annotation>
+</annotation> from my <annotation conceptref="FROM_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
+</annotation> into my <annotation conceptref="TO_ACCOUNT">
+	<annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
+</annotation>

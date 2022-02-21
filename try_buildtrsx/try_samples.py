@@ -10,7 +10,7 @@ from buildtrsx.build_samples.build_utterances import (
 samples = {
     "action_verb": ["take", "transfer", "withdraw"],
     "origin_prep": ["from my"],
-    "FROM_ACCOUNT": ["chequing account", "checking account", "savings account"],
+    "FROM_ACCOUNT": ["checking account", "savings account"],
     "destination_prep": ["to my", "over to my", "into my", "to put in my"],
     "TO_ACCOUNT": [
         "TFSA",
@@ -21,9 +21,6 @@ samples = {
         "RESP",
     ],
 }
-# generate all possible utterances from one specific semantic signature
-utterances = generate_utterances(samples)
-print(utterances)
 
 # in order to annotate the utterances correctly, we need to know the relations
 entities = {
@@ -33,14 +30,19 @@ entities = {
     "ACCOUNT_TYPE": {},
 }
 
-result = trsx_annotated_literals(entities=entities, samples=samples)
+# generate all possible utterances from one specific semantic signature
+utterances = generate_utterances(samples, sample_size=5)
+print(utterances)
 
-samples.update(result)
+samples_ann = trsx_annotated_literals(entities=entities, samples=samples)
+samples.update(samples_ann)
 
-annotated_utterances = generate_utterances(samples)
+annotated_utterances = generate_utterances(samples, sample_size=5)
 
 dict_utterances = generate_utterances_dict(
-    samples=annotated_utterances, samples_attr={"intentref": "MAKE_INVESTMENT"}
+    samples=annotated_utterances,
+    # samples=utterances,
+    samples_attr={"intentref": "MAKE_INVESTMENT"}
 )
 
 samples_node = trsx_samples_node(samples=dict_utterances)

@@ -1,9 +1,13 @@
-import semantic_signatures as ss
-import semantic_signatures_fr as ssf
+import build_investment_menu.semantic_signatures as ss
+import build_investment_menu.semantic_signatures_fr as ssf
 from buildtrsx.build_samples.build_utterances import generate_utterances
 
 
 def save_utterances(sim_sigs: list, n: int, file_name: str):
+    """take a list of different semantic signatures and
+    generate a random sample of utterances using those
+    signatures, save the result in a .txt file
+    """
     utterances = []
     for sig in sim_sigs:
         utterances += generate_utterances(sig, sample_size=n)
