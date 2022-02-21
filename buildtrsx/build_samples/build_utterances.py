@@ -20,10 +20,13 @@ def generate_utterances_df(semantic_sig: dict):
     return df.apply(concat_string, 1)
 
 
-def generate_utterances(semantic_sig: dict) -> list:
+def generate_utterances(semantic_sig: dict, sample_size: int) -> list:
     """store all possible formulations for one semantic signature in a list"""
     df = expand_grid(dictionary=semantic_sig)
-    #print(df.head())
+    if len(df.index) < sample_size:
+        df = df.sample(n=sample_size, replace=True)
+    else:
+        df = df.sample(n=sample_size)
     return list(df.apply(concat_string, 1))
 
 

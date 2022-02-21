@@ -17,7 +17,7 @@ sem_sig = [
 ]
 utterances = []
 for sig in sem_sig:
-    utterances += generate_utterances(sig)
+    utterances += generate_utterances(sig, sample_size=20)
 
 print(len(utterances))
 
