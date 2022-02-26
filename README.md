@@ -29,7 +29,7 @@ This package is composed by three sub-packages
 - build samples 
 
 The module build_project.py contains the functions to generate the metadata and 
-sources node as well as the wrapper project function. 
+sources nodes as well as the wrapper project function. 
 
 # TRSX file structure 
 
@@ -173,16 +173,17 @@ concept node.
     - **concept** (zero-many).
     Each concept node defines a single entity and contains zero or one settings
     and relations node.
-        - **settings** (zero-one).Documentation about this specific node is 
-        quite incomplete in the Nuance documentation. 
+        - **settings** (zero-one). Documentation about this specific node is 
+        quite incomplete in the Nuance documentation. Nevertheless the use of 
+        this node is not necessary to our present needs. 
         - **relations** (zero-one).
         The relations node specifies the relation between entities. Relations 
         can be of type **isA**, **hasA**, or **hasReferrers**. The relations 
-        node contains zero or many relation.  
+        node contains zero or many relation nodes.  
         
-            - **relation** (zero-many) 
-            The relation node has two required attributes: the type, that 
-            indicates the type of relation, and the conceptref, that indicates 
+            - **relation** (zero-many). 
+            The relation node has two required attributes: the `type`, that 
+            indicates the type of relation, and the `conceptref`, that indicates 
             the name of entity to which the relation applies. See the second 
             example below. 
           
@@ -244,10 +245,12 @@ concept node.
             
 ### Dictionaries (zero-one)
 
-A List entity can have an associated dictionary. The dictionary is the list of spoken forms that correspond to 
-'mentions' that are part of the entity. The dictionaries node contains zero or many dictionary nodes.
-  - **dictionary** (zero-many) Contains a required attribute conceptref, which defines the entity the entries 
-  apply to. Each dictionary node contains zero or many entry nodes. 
+A List entity can have an associated dictionary. The dictionary is the list of 
+spoken forms that correspond to 'mentions' that are part of the entity. The 
+dictionaries node contains zero or many dictionary nodes.
+  - **dictionary** (zero-many). Contains a required attribute `conceptref`, 
+  which defines the entity the entries apply to. Each dictionary node contains
+  zero or many entry nodes. 
     - **entry** (zero-many)
     
 ```python
@@ -278,9 +281,14 @@ print(trsx_dictionaries(entities=literals))
   
 ### samples node (zero-many)  
 
-Samples are sentences that are used to train your NLU model. Samples are labeled with intents and annotated with entities. The samples node contains zero or many sample node and each sample node contains zero or many annotation node
+Samples are sentences that are used to train the NLU model. Samples are labeled 
+with intents and annotated with entities. The samples node contains zero or many 
+sample node and each sample node contains zero or many annotation node.
 
-The data augmentation using semantic signatures can be done at the same time as the node construction and annotation process. The example below show how to generate a samples node from a dictionary representing one phase structure corresponding to a particular semantic signature. 
+The data augmentation using semantic signatures can be done at the same time as 
+the node construction and annotation process. The example below show how to 
+generate a samples node from a dictionary representing one phase structure 
+corresponding to a particular semantic signature. 
 
 ```python
 
