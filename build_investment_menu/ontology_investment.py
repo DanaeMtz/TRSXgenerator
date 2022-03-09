@@ -35,7 +35,7 @@ sources_node = trsx_sources_node(sources=sources)
 
 project_attributes = {
     "xmlns:nuance": "https://developer.nuance.com/mix/nlu/trsx",
-    "xml:lang": "fra-CAN",
+    "xml:lang": "eng-USA", #""fra-CAN",
     "nuance:enginePackVersion": "hosted",
 }
 

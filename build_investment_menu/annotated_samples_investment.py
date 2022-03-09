@@ -54,11 +54,11 @@ dict_utterances = generate_utterances_dict(
 )
 
 samples_node = trsx_samples_node(samples=dict_utterances)
-print(samples_node)
+#print(samples_node)
 
 project_attributes = {
     "xmlns:nuance": "https://developer.nuance.com/mix/nlu/trsx",
-    "xml:lang": "fra-CAN",
+    "xml:lang": "eng-USA", #"fra-CAN",
     "nuance:enginePackVersion": "hosted",
 }
 

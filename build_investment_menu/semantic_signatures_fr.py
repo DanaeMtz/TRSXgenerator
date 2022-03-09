@@ -92,7 +92,7 @@ SS2_S1 = {
         "rajouter",
         "transférer",
     ],
-    "AMOUNT": ["500 dollars", "500 piasses"],
+    "AMOUNT": ["200 dollars", "600 dollars", "1200 dollars", "500 piasses"],
     "destination_prep": ["à mon", "dans mon"],
     "TO_ACCOUNT": [
         "CELI",
@@ -107,10 +107,10 @@ SS2_S1 = {
 
 SS2_S2 = {
     "action_verb": [
-        "faire un dépôt",
-        "faire un transfert",
+        "faire un dépôt de",
+        "faire un transfert de",
     ],
-    "AMOUNT": ["500 dollars", "500 piasses"],
+    "AMOUNT": ["400 dollars", "900 dollars", "1700 dollars", "300 piasses"],
     "destination_prep": ["à mon", "vers mon"],
     "TO_ACCOUNT": [
         "CELI",
@@ -264,7 +264,6 @@ SS4_S1 = {
         "compte d’épargne pour les études",
     ],
 }
-
 
 SS4_S2 = {
     "action_verb": [

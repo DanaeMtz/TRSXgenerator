@@ -41,7 +41,7 @@ dictionaries_node = trsx_dictionaries_node(entities=literals)
 
 project_attributes = {
     "xmlns:nuance": "https://developer.nuance.com/mix/nlu/trsx",
-    "xml:lang": "fra-CAN",
+    "xml:lang": "eng-USA", #"fra-CAN",
     "nuance:enginePackVersion": "hosted",
 }
 

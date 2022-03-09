@@ -14,6 +14,7 @@ SS1_S1 = {  # SS1_S1 = semantic signature 1, structure 1
     "destination_prep": ["to my"],
     "TO_ACCOUNT": ["TFSA", "Tax-Free Savings Account", "CELI", "RRSP", "RSP", "RESP"],
 }
+
 # structure 2
 SS1_S2 = {
     "action_verb": ["periodic purchase", "recurring purchase"],
