@@ -83,6 +83,9 @@ target/
 profile_default/
 ipython_config.py
 
+# R
+.Rhistory
+
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
 #   intended to run in multiple environments; otherwise, check them in:
@@ -143,3 +146,11 @@ pyvenv.cfg
 *.pyc
 */__pycache__/
 buildtrsx/__pycache__/build_project.cpython-38.pyc
+*.html
+data_augmetation/
+data/
+outputs/
+share/py4j
+data_augmentation/
+data/
+build_investment_menu/

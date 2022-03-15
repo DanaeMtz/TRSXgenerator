@@ -2,7 +2,7 @@ from yattag import Doc, indent
 
 
 def project_wrapper(func):
-    """ "encapsulates one node at a time"""
+    """encapsulates one node at a time"""
 
     def wrapper(nuance_ver: str = "2.5", attributes: dict = None, *args, **kwargs):
         """Encapsulate sources or metadata node and incorporate attributes for the project's node."""
@@ -11,15 +11,15 @@ def project_wrapper(func):
         if attributes is None:
             with tag("project", ("nuance:version", nuance_ver)):
                 doc.asis(func(*args, **kwargs))
-                doc.stag(
-                    "ontology", base="http://localhost:8080/resources/ontology-1.0.xml"
-                )
+                #doc.stag(
+                #    "ontology", base="http://localhost:8080/resources/ontology-1.0.xml"
+                #)
         else:
             with tag("project", ("nuance:version", nuance_ver), *attributes.items()):
                 doc.asis(func(*args, **kwargs))
-                doc.stag(
-                    "ontology", base="http://localhost:8080/resources/ontology-1.0.xml"
-                )
+                #doc.stag(
+                #    "ontology", base="http://localhost:8080/resources/ontology-1.0.xml"
+                #)
         return indent(doc.getvalue(), indentation="\t")
     wrapper._original = func
     return wrapper
