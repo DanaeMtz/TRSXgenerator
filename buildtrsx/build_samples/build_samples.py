@@ -26,6 +26,7 @@ def trsx_annotation_node(entity: str, literal: str) -> str:
     return indent(doc.getvalue(), indentation="\t")
 
 
+
 def trsx_annotated_literals(entities: dict, samples: dict) -> dict:
     """stock annotated literals in a dictionary
     Args:
@@ -37,7 +38,7 @@ def trsx_annotated_literals(entities: dict, samples: dict) -> dict:
     nodes = list()
     result = dict()
     for entity, relation in entities.items():
-        if entity in samples.keys() and relation["type"] == "isA":
+        if (entity in samples.keys()) and (len(relation) != 0 and relation["type"] == "isA"):
             for literal in samples[entity]:
                 doc, tag, text = Doc().tagtext()
                 with tag("annotation", conceptref=entity):
@@ -48,8 +49,14 @@ def trsx_annotated_literals(entities: dict, samples: dict) -> dict:
                     )
                 annotation_node = indent(doc.getvalue(), indentation="\t")
                 nodes += [(entity, annotation_node)]
+        if (entity in samples.keys()) and (len(relation) == 0):
+            for literal in samples[entity]:
+                doc, tag, text = Doc().tagtext()
+                doc.asis(trsx_annotation_node(entity=entity, literal=literal))
+                nodes += [(entity, doc.getvalue())]
     # put the annotation nodes in a dictionary, entity as a key
     for key, value in nodes:
         result.setdefault(key, []).append(value)
 
     return result
+
