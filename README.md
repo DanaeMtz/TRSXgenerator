@@ -47,25 +47,29 @@ The project node contains
 - zero or many samples node 
 
 ```xml
-<project nuance:version="2.5">
-    <metadata/>
-    <sources/>
-    <ontology/>
-    <dictionaries/>
-    <samples/>
+<project xmlns:nuance="https://developer.nuance.com/mix/nlu/trsx" xml:lang="en-us" nuance:version="2.5" nuance:enginePackVersion="hosted">
+	<metadata></metadata> 
+	<sources></sources>
+	<ontology>
+		<intents></intents>
+ 		<concepts></concepts>  
+	</ontology> 
+	<dictionaries></dictionaries> 
+	<samples></samples>
 </project>
 ```
 
 ### Metadata node (zero-one)
 
 The metadata node lets you manage extra details about your project, such as 
-author or version.The metadata node contains zero or many entry nodes. 
+author or version. The metadata node contains zero or many entry nodes. 
 
 - Entry node (zero-many)
 
 The entry node contains the key-value pair that specifies the metadata. The 
-entry node has the attribute key, which is a string. The entry's value can be 
+entry node has the attribute `key`, which is a string. The entry's value can be 
 any string.
+
 
 ```python
 from buildtrsx.build_project import trsx_metadata_node
@@ -91,12 +95,17 @@ print(metadata_node)
 ### Sources node (zero-one)
 
 The Sources node provides a list of sources used to label imported data to 
-identify its origin. The sources node contains zero or many source nodes.
+identify its origin. The sources node contains zero or many `source` nodes.
     
 - Source nodes (zero-many)
 
-Contains one required attribute, name. To label data, in the concept node you 
+Contains one required attribute, `name`. To label data, in the concept node you 
 set its `sourceref` attribute to the name of the source.
+
+The function `trsx_sources_node()` receives a dictionary containing keys that 
+represent the source's name and values in form of nested dictionaries representing 
+the rest of possible (optional) attributes.
+
 
 ```python
 from buildtrsx.build_project import trsx_sources_node
@@ -125,8 +134,12 @@ The intents node contains zero or many intent nodes.
     - **intent node** (zero-many).
     Each intent in the ontology has its own intent node.
         - **links node** (zero-one).
-        An intent is linked to a set of entities. The links node describes the 
+        An intent is linked to a set of entities. The `links` node describes the 
         entities that can be used in sample annotations for this intent.
+        
+        The function `trsx_intents_node()` receives as argument a dictionary 
+        containing keys that represent one intent name and values of type list 
+        containing the corresponding entities for that intent.
         
         ```python
         from buildtrsx.build_ontology.build_ontology import trsx_intents_node
@@ -169,13 +182,13 @@ The intents node contains zero or many intent nodes.
 
 - **concepts** (one).
 The concepts node is composed by the ontology entities and contains zero or many 
-concept node.
+`concept` node.
     - **concept** (zero-many).
-    Each concept node defines a single entity and contains zero or one settings
-    and relations node.
+    Each concept node defines a single entity and contains zero or one `settings`
+    and `relations` node.
         - **settings** (zero-one). Documentation about this specific node is 
         quite incomplete in the Nuance documentation. Nevertheless the use of 
-        this node is not necessary to our present needs. 
+        this node is not necessary to our present needs.
         - **relations** (zero-one).
         The relations node specifies the relation between entities. Relations 
         can be of type **isA**, **hasA**, or **hasReferrers**. The relations 
@@ -193,7 +206,7 @@ concept node.
             entities = {
                 "TO_ACCOUNT": {},
                 "FROM_ACCOUNT": {},
-                "AMOUNT": {},
+                "AMOUNT": {"type": "isA", "conceptref": "nuance_AMOUNT"},
                 "ACCOUNT_TYPE": {},
             }
             
@@ -202,7 +215,11 @@ concept node.
             ```
             ```xml
             <concepts>
-                <concept name="AMOUNT"/>
+                <concept name="AMOUNT">
+	                <relations>
+	              	  <relation type="isA" conceptref="nuance_AMOUNT" />
+	                </relations>
+	              </concept>
                 <concept name="TO_ACCOUNT"/>
                 <concept name="FROM_ACCOUNT"/>
                 <concept name="ACCOUNT_TYPE"/>
@@ -254,7 +271,7 @@ dictionaries node contains zero or many dictionary nodes.
     - **entry** (zero-many)
     
 ```python
-from buildtrsx.build_dictionaries.build_dict import trsx_dictionaries
+from buildtrsx.build_dictionaries.build_dict import trsx_dictionaries_node
 
 account_type = {
     "CELI": ["CELI", "Compte libre d’impôt"],
@@ -263,7 +280,7 @@ account_type = {
 }
 
 literals = {"ACCOUNT_TYPE": account_type}
-print(trsx_dictionaries(entities=literals))
+print(trsx_dictionaries_node(entities=literals))
 ```
     
 ```xml
@@ -360,55 +377,21 @@ annotated_utterances = generate_utterances(samples, sample_size=5)
 
 dict_utterances = generate_utterances_dict(
     samples=annotated_utterances,
-    samples_attr={"intentref": "MAKE_INVESTMENT"}
+    samples_attr={"intentref": "MAKE_INVESTMENT", "fullyVerified": "true"}
 )
 
 samples_node = trsx_samples_node(samples=dict_utterances)
 print(samples_node)
 ```
 
+Remark: when generating a node with fully annotated utterances, the attribute `fullyVerified="true"` must be included. 
 
 ```xml
 <samples>
-	<sample intentref="MAKE_INVESTMENT">withdraw from my 
-	    <annotation conceptref="FROM_ACCOUNT">
-	        <annotation conceptref="ACCOUNT_TYPE">checking account </annotation>
-	    </annotation> to put in my 
-        <annotation conceptref="TO_ACCOUNT">
-            <annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
-        </annotation>
-    </sample>
-	<sample intentref="MAKE_INVESTMENT">take from my 
-        <annotation conceptref="FROM_ACCOUNT">
-            <annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
-        </annotation> into my 
-        <annotation conceptref="TO_ACCOUNT">
-            <annotation conceptref="ACCOUNT_TYPE">Tax-Free Savings Account</annotation>
-        </annotation>
-    </sample>
-	<sample intentref="MAKE_INVESTMENT">withdraw from my 
-        <annotation conceptref="FROM_ACCOUNT">
-            <annotation conceptref="ACCOUNT_TYPE">savings account</annotation>
-        </annotation> into my 
-        <annotation conceptref="TO_ACCOUNT">
-            <annotation conceptref="ACCOUNT_TYPE">RESP</annotation>
-        </annotation>
-    </sample>
-	<sample intentref="MAKE_INVESTMENT">transfer from my 
-        <annotation conceptref="FROM_ACCOUNT">
-            <annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
-        </annotation> into my 
-        <annotation conceptref="TO_ACCOUNT">
-            <annotation conceptref="ACCOUNT_TYPE">CELI</annotation>
-        </annotation>
-    </sample>
-	<sample intentref="MAKE_INVESTMENT">take from my 
-        <annotation conceptref="FROM_ACCOUNT">
-            <annotation conceptref="ACCOUNT_TYPE">checking account</annotation>
-        </annotation> into my 
-        <annotation conceptref="TO_ACCOUNT">
-            <annotation conceptref="ACCOUNT_TYPE">RRSP</annotation>
-        </annotation>
-    </sample>
+	<sample intentref="MAKE_INVESTMENT" fullyVerified="true">transfer from my <annotation conceptref="FROM_ACCOUNT"><annotation conceptref="ACCOUNT_TYPE">savings account</annotation></annotation> over to my <annotation conceptref="TO_ACCOUNT"><annotation conceptref="ACCOUNT_TYPE">RRSP</annotation></annotation></sample>
+	<sample intentref="MAKE_INVESTMENT" fullyVerified="true">take from my <annotation conceptref="FROM_ACCOUNT"><annotation conceptref="ACCOUNT_TYPE">checking account</annotation></annotation> into my <annotation conceptref="TO_ACCOUNT"><annotation conceptref="ACCOUNT_TYPE">RESP</annotation></annotation></sample>
+	<sample intentref="MAKE_INVESTMENT" fullyVerified="true">take from my <annotation conceptref="FROM_ACCOUNT"><annotation conceptref="ACCOUNT_TYPE">savings account</annotation></annotation> over to my <annotation conceptref="TO_ACCOUNT"><annotation conceptref="ACCOUNT_TYPE">CELI</annotation></annotation></sample>
+	<sample intentref="MAKE_INVESTMENT" fullyVerified="true">transfer from my <annotation conceptref="FROM_ACCOUNT"><annotation conceptref="ACCOUNT_TYPE">savings account</annotation></annotation> to my <annotation conceptref="TO_ACCOUNT"><annotation conceptref="ACCOUNT_TYPE">TFSA</annotation></annotation></sample>
+	<sample intentref="MAKE_INVESTMENT" fullyVerified="true">transfer from my <annotation conceptref="FROM_ACCOUNT"><annotation conceptref="ACCOUNT_TYPE">savings account</annotation></annotation> to put in my <annotation conceptref="TO_ACCOUNT"><annotation conceptref="ACCOUNT_TYPE">RESP</annotation></annotation></sample>
 </samples>
 ```
