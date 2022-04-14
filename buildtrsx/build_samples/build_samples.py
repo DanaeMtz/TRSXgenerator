@@ -1,5 +1,6 @@
 from yattag import Doc, indent
-
+from typing import List
+from buildtrsx.build_samples.build_utterances import generate_utterances
 
 def trsx_sample_node(sample: str, sample_atr: dict) -> str:
     """generate the sample node"""
@@ -49,7 +50,6 @@ def trsx_annotated_literals(entities: dict, samples: dict) -> dict:
                 annotation_node = indent(doc.getvalue(), indentation="\t")
                 nodes += [(entity, annotation_node)]
         elif (entity in samples.keys()) and (len(relation) == 0):
-            print(entity)
             for literal in samples[entity]:
                 doc, tag, text = Doc().tagtext()
                 doc.asis(trsx_annotation_node(entity=entity, literal=literal))
@@ -63,7 +63,7 @@ def trsx_annotated_literals(entities: dict, samples: dict) -> dict:
 
 def generate_annotated_utterances(
     sem_sig: list, entities: dict, sample_size: int
-) -> list:
+) -> List:
     """Generate utterances from a list containing the semantic signatures."""
     ann_utt = []
     for sig in sem_sig:
