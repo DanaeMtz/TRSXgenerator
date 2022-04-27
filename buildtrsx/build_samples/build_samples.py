@@ -1,6 +1,9 @@
 from yattag import Doc, indent
-from typing import List
 from buildtrsx.build_samples.build_utterances import generate_utterances
+import pandas as pd
+from typing import List, Dict, Pattern
+from buildtrsx.utils.functions import df2dict, append_new_line
+
 
 def trsx_sample_node(sample: str, sample_atr: dict) -> str:
     """generate the sample node"""
@@ -72,3 +75,45 @@ def generate_annotated_utterances(
         utterances = generate_utterances(sig, sample_size=sample_size)
         ann_utt += utterances
     return ann_utt
+
+
+def parse_jsgf_output(filepath: str, regex_dict: Dict[str, Pattern[str]]) -> List[Dict[str, List[str]]]:
+    """
+    Parse jsgf output file using a dictionary of regexes
+
+    Parameters
+    ----------
+    filepath : str
+        Filepath for file_object to be parsed
+
+    regex_dict: Dict[str, Pattern[str]
+        Dictionary containing regexes used to extract entities
+
+    Returns
+    -------
+    utt_list: List[Dict[str, List[str]]]
+        List containing the parsed utterances with entities
+    """
+
+    append_new_line(filepath)
+
+    utt_list = []
+
+    # Open the file and read through it line by line
+    with open(filepath, 'r') as file_object:
+        line = file_object.readline()
+        while line:
+            data = pd.DataFrame([], columns=['Index', 'Command', 'Value'])
+            # try to match with the regexes
+            for key, rx in regex_dict.items():
+                matches = rx.finditer(line)
+                if matches:
+                    for match in matches:
+                        record = {'Index': match.span()[0], 'Command': key, 'Value': (match.group(1)).strip()}
+                        data = data.append(record, ignore_index=True)
+
+            data = data.sort_values('Index')
+            utt_list.append(df2dict(data))
+            line = file_object.readline()
+
+    return utt_list
