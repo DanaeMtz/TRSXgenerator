@@ -153,4 +153,4 @@ outputs/
 share/py4j
 data_augmentation/
 data/
-build_investment_menu/
+demo/
