@@ -2,6 +2,7 @@ from buildtrsx.build_dictionaries.build_dict import (
     trsx_dictionaries_node,
 )
 from buildtrsx.build_project import trsx_gather_nodes
+from build_investment_menu.ontology_investment import project_attributes
 
 Banking_account = {
     "chequing account": [
@@ -78,14 +79,7 @@ literals = {
 }
 
 dictionaries_node = trsx_dictionaries_node(entities=literals)
-print(dictionaries_node)
 
-project_attributes = {
-    "xmlns:nuance": "https://developer.nuance.com/mix/nlu/trsx",
-    "xml:lang": "fra-CAN",  # "eng-USA",
-    "nuance:enginePackVersion": "hosted",
-    "nuance:version": "2.5",
-}
 
 trsx = trsx_gather_nodes(
     dictionaries_node=dictionaries_node, attributes=project_attributes
