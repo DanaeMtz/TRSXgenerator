@@ -4,18 +4,19 @@ from buildtrsx.build_dictionaries.build_dict import (
 from buildtrsx.build_project import trsx_gather_nodes
 
 Banking_account = {
-    "compte chèques": [
+    "chequing account": [
         "compte chèques",
         "compte chèque",
         "compte bancaire",
-        "compte de banque" "compte courant",
+        "compte de banque",
+        "compte courant",
         "compte progressif",
     ],
-    "compte épargne": [
+    "savings account": [
         "compte épargne",
         "compte d'épargne",
     ],
-    "marge de crédit": ["marge de crédit"],
+    "line of credit": ["marge de crédit"],
 }
 
 Investment_account = {
