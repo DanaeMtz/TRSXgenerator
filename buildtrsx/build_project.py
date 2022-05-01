@@ -4,18 +4,18 @@ from yattag import Doc, indent
 def project_wrapper(func):
     """encapsulates one node at a time"""
 
-    def wrapper(nuance_ver: str = "2.5", attributes: dict = None, *args, **kwargs):
+    def wrapper(attributes: dict = None, *args, **kwargs):
         """Encapsulate sources or metadata node and incorporate attributes for the project's node."""
         doc, tag, text = Doc().tagtext()
         doc.asis('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>')
         if attributes is None:
-            with tag("project", ("nuance:version", nuance_ver)):
+            with tag("project"):
                 doc.asis(func(*args, **kwargs))
                 #doc.stag(
                 #    "ontology", base="http://localhost:8080/resources/ontology-1.0.xml"
                 #)
         else:
-            with tag("project", ("nuance:version", nuance_ver), *attributes.items()):
+            with tag("project", *attributes.items()):
                 doc.asis(func(*args, **kwargs))
                 #doc.stag(
                 #    "ontology", base="http://localhost:8080/resources/ontology-1.0.xml"
