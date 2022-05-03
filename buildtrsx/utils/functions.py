@@ -28,5 +28,5 @@ def append_new_line(filepath):
 		last_char = f.read(1)
 
 	if file_size > 0 and last_char != b'\n':
-		with open(filepath, "a") as file_object:
+		with open(filepath, "a", encoding="utf-8") as file_object:
 			file_object.write("\n")

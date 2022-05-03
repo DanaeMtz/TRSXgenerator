@@ -100,7 +100,7 @@ def parse_jsgf_output(filepath: str, regex_dict: Dict[str, Pattern[str]]) -> Lis
     utt_list = []
 
     # Open the file and read through it line by line
-    with open(filepath, 'r') as file_object:
+    with open(filepath, 'r', encoding="utf-8") as file_object:
         line = file_object.readline()
         while line:
             data = pd.DataFrame([], columns=['Index', 'Command', 'Value'])
